@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Conociendo el Islam">
 <meta property="og:title" content="Conociendo el Islam — Espiritualidad y vida cotidiana">
 <meta property="og:description" content="Un espacio claro, humano y respetuoso para conocer el islam desde cero: su espiritualidad, su historia y sus enseñanzas para la vida diaria.">
-<meta property="og:image" content="https://conociendoelislam.com/assets/hero-arco.png">
+<meta property="og:image" content="https://conociendoelislam.com/assets/hero-arco.webp">
 <meta property="og:locale" content="es_MX">
 <meta property="og:url" content="https://conociendoelislam.com/">
 
@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Conociendo el Islam — Espiritualidad y vida cotidiana">
 <meta name="twitter:description" content="Aprende sobre el islam desde cero: espiritualidad, historia, Corán y vida cotidiana, con una mirada clara y respetuosa.">
-<meta name="twitter:image" content="https://conociendoelislam.com/assets/hero-arco.png">
+<meta name="twitter:image" content="https://conociendoelislam.com/assets/hero-arco.webp">
 
 <!-- Datos estructurados -->
 <script type="application/ld+json">
@@ -107,7 +107,8 @@
   .nav-links a{ text-decoration:none; color:var(--ink-soft); }
   .nav-links a:hover{ color:var(--sage-deep); }
   .nav-cta{ display:flex; gap:12px; align-items:center; }
-  @media(min-width:860px){ .nav-links{ display:flex; } }
+  .nav-login{ display:none; }
+  @media(min-width:860px){ .nav-links{ display:flex; } .nav-login{ display:inline-flex; } }
 
   /* -------- HERO -------- */
   .hero{
@@ -116,9 +117,19 @@
     display:flex; align-items:center;
     background-image:
       linear-gradient(90deg, var(--paper) 0%, rgba(247,244,239,0.88) 32%, rgba(247,244,239,0.35) 55%, rgba(247,244,239,0.05) 75%),
-      url('assets/hero-arco.png');
+      url('assets/hero-arco.webp');
     background-size:cover;
     background-position:center;
+  }
+  @media(max-width:700px){
+    .hero{
+      min-height:100vh;
+      background-image:
+        linear-gradient(180deg, rgba(247,244,239,0.97) 0%, rgba(247,244,239,0.86) 46%, rgba(247,244,239,0.35) 78%, rgba(247,244,239,0.08) 100%),
+        url('assets/hero-arco.webp');
+      background-position:center 20%;
+    }
+    .hero-inner{ padding-top:100px; }
   }
   .hero-inner{ max-width:520px; padding:60px 28px; position:relative; z-index:2; }
   .hero h1{
@@ -226,6 +237,7 @@
   @media(min-width:700px){ .routes-grid{ grid-template-columns:1fr 1fr; } }
   @media(min-width:1000px){ .routes-grid{ grid-template-columns:repeat(3,1fr); } }
   .route-card{
+    display:block; text-decoration:none;
     border:1px solid var(--line); border-radius:12px; padding:26px 24px;
     background:#fff; cursor:pointer; transition:.2s ease;
   }
@@ -269,17 +281,17 @@
     border-bottom:1px solid var(--line);
     padding:18px 0;
   }
-  .faq-q{
+  .faq-item summary{
     display:flex; justify-content:space-between; align-items:center;
     cursor:pointer; font-weight:500; font-size:15.5px; color:var(--ink);
+    list-style:none;
   }
-  .faq-q::after{ content:"+"; font-size:20px; color:var(--sage-deep); font-weight:300; }
-  .faq-item.open .faq-q::after{ content:"–"; }
-  .faq-a{
-    max-height:0; overflow:hidden; transition:max-height .25s ease;
-    font-size:14.5px; color:var(--ink-soft);
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{ content:"+"; font-size:20px; color:var(--sage-deep); font-weight:300; }
+  .faq-item[open] summary::after{ content:"–"; }
+  .faq-item p{
+    font-size:14.5px; color:var(--ink-soft); margin:12px 0 0 0;
   }
-  .faq-item.open .faq-a{ max-height:200px; padding-top:12px; }
 
   /* -------- FINAL CTA -------- */
   .final-cta{
@@ -307,14 +319,14 @@
   <div class="nav-row">
     <div class="brand">Conociendo el <em>Islam</em></div>
     <div class="nav-links">
-      <a href="#preguntas-frecuentes">El programa</a>
+      <a href="#como-funciona">El programa</a>
       <a href="#rutas">Rutas</a>
       <a href="#no-es">Qué no es</a>
       <a href="#faq">Preguntas</a>
     </div>
     <div class="nav-cta">
-      <a href="#" class="btn btn-outline">Iniciar sesión</a>
-      <a href="registro.html" class="btn btn-primary">Crear mi acceso</a>
+      <a href="modulos.html" class="btn btn-outline nav-login">Ver módulos</a>
+      <a href="registro.html" class="btn btn-primary">Recibir avisos</a>
     </div>
   </div>
 </nav>
@@ -327,10 +339,10 @@
     <p class="lead">Descubre su espiritualidad, su historia y sus enseñanzas para la vida cotidiana desde una mirada clara, humana y respetuosa.</p>
     <p class="lead">No necesitas saber árabe ni pertenecer a una religión. Este es un espacio para preguntar, comprender y avanzar a tu propio ritmo.</p>
     <div class="hero-actions">
-      <a href="registro.html" class="btn btn-primary">Comenzar desde cero</a>
-      <a href="programa.html" class="btn btn-outline">Explorar el programa</a>
+      <a href="modulos.html" class="btn btn-primary">Comenzar desde cero</a>
+      <a href="registro.html" class="btn btn-outline">Recibir avisos por correo</a>
     </div>
-    <div class="hero-note">El registro inicial es gratuito</div>
+    <div class="hero-note">Todo el contenido es abierto y gratuito — no necesitas registrarte para aprender</div>
   </div>
 </header>
 
@@ -344,22 +356,10 @@
     <div class="q-grid">
       <div class="q-card">¿Qué significa realmente "islam"?</div>
       <div class="q-card">¿Por qué los musulmanes oran cinco veces al día?</div>
-      <div class="q-card">¿Qué dice el islam sobre el propósito de la vida?</div>
-      <div class="q-card">¿Por qué se recita el Corán en árabe?</div>
-      <div class="q-card">¿Qué puede enseñarnos sobre la gratitud, la confianza y la paciencia?</div>
-      <div class="q-card">¿Cómo es entrar por primera vez a una mezquita?</div>
-      <div class="q-card">¿Cómo se relaciona el islam con la familia, el trabajo y la salud mental?</div>
+      <div class="q-card">¿Qué puede aportar el islam a la vida cotidiana?</div>
+      <div class="q-card">¿Cómo comenzar a conocerlo sin sentirme perdido?</div>
     </div>
     <p class="q-close">Aquí puedes comenzar a encontrar respuestas — sin miedo, sin presión, sin conocimientos previos.</p>
-  </div>
-</section>
-
-<!-- MAS ALLA -->
-<section class="beyond">
-  <div class="wraps">
-    <span class="eyebrow">Más allá de los estereotipos</span>
-    <p>El islam no es solamente un conjunto de rituales. Es una forma de comprender la relación con Dios, con uno mismo, con otras personas y con la vida cotidiana.</p>
-    <p>En esta plataforma conocerás sus fundamentos, prácticas, historia y espiritualidad, diferenciando las enseñanzas islámicas de las costumbres culturales y de las conductas individuales.</p>
   </div>
 </section>
 
@@ -367,8 +367,9 @@
 <section class="perspectives">
   <div class="wrap">
     <div class="persp-head">
-      <span class="eyebrow">Una mirada integral</span>
-      <h2 class="section-title">Cuatro caminos, un mismo aprendizaje</h2>
+      <span class="eyebrow">Más allá de los estereotipos</span>
+      <h2 class="section-title">Cuatro perspectivas para comprender</h2>
+      <p class="section-sub">El islam no es solamente un conjunto de rituales. Es una forma de comprender la relación con Dios, con uno mismo, con otras personas y con la vida cotidiana. Aquí distinguimos sus enseñanzas de las costumbres culturales y de las conductas individuales, desde cuatro ángulos:</p>
     </div>
     <div class="persp-grid">
       <div class="persp-card">
@@ -393,25 +394,25 @@
 </section>
 
 <!-- COMO FUNCIONA -->
-<section class="how">
+<section class="how" id="como-funciona">
   <div class="wrap">
     <span class="eyebrow">Cómo funciona</span>
     <h2 class="section-title" style="margin-bottom:36px;">Tres pasos para comenzar</h2>
     <div class="how-steps">
       <div class="how-step">
         <span class="how-num">01</span>
-        <h3>Regístrate gratuitamente</h3>
-        <p>Sin compromiso. Solo lo esencial para guardar tu avance.</p>
+        <h3>Entra sin registrarte</h3>
+        <p>Todo el contenido es abierto — solo entra y empieza a leer.</p>
       </div>
       <div class="how-step">
         <span class="how-num">02</span>
-        <h3>Elige una ruta o explora libremente</h3>
+        <h3>Elige un módulo o explora libremente</h3>
         <p>Con orientación o a tu manera — tú decides cómo avanzar.</p>
       </div>
       <div class="how-step">
         <span class="how-num">03</span>
         <h3>Aprende a tu ritmo</h3>
-        <p>Videos, lecturas, audios y experiencias breves, siempre progresivas.</p>
+        <p>Lecturas y actividades breves, siempre progresivas.</p>
       </div>
     </div>
     <div class="how-tags">
@@ -447,32 +448,44 @@
   </div>
 </section>
 
+<!-- REGISTRO INTERMEDIO -->
+<section>
+  <div class="wrap">
+    <div class="final-cta" style="padding:44px 30px;">
+      <h2 style="font-size:24px;">¿Listo para dar el <em>primer paso</em>?</h2>
+      <div class="final-actions">
+        <a href="modulos.html" class="btn btn-primary">Ver los módulos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- RUTAS -->
 <section id="rutas">
   <div class="wrap">
     <span class="eyebrow">Rutas de aprendizaje</span>
     <h2 class="section-title" style="margin-bottom:36px;">Elige por dónde empezar</h2>
     <div class="routes-grid">
-      <div class="route-card">
+      <a class="route-card" href="rutas/islam-desde-cero.html">
         <h3>Quiero conocer el islam desde cero</h3>
         <p>Fundamentos, palabras esenciales, Corán, Muhammad ﷺ y oración.</p>
-      </div>
-      <div class="route-card">
+      </a>
+      <a class="route-card" href="rutas/visitar-mezquita.html">
         <h3>Quiero visitar una mezquita</h3>
         <p>Vestimenta, saludo, espacios, oración y protocolos.</p>
-      </div>
-      <div class="route-card">
+      </a>
+      <a class="route-card" href="rutas/orientacion-espiritual.html">
         <h3>Busco una orientación espiritual</h3>
         <p>Propósito, tawakkul, sabr, gratitud, dhikr y vida interior.</p>
-      </div>
-      <div class="route-card">
+      </a>
+      <a class="route-card" href="rutas/vida-cotidiana.html">
         <h3>Me interesa la vida cotidiana</h3>
         <p>Alimentación, sueño, higiene, familia, trabajo y relaciones.</p>
-      </div>
-      <div class="route-card">
+      </a>
+      <a class="route-card" href="rutas/nuevo-musulman.html">
         <h3>Soy musulmán recientemente</h3>
         <p>Primeros pasos, oración, Corán, comunidad y aprendizaje gradual.</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -491,6 +504,17 @@
       <span class="who-chip">Personas en búsqueda espiritual</span>
       <span class="who-chip">Nuevos musulmanes</span>
       <span class="who-chip">Familiares o amigos de musulmanes</span>
+    </div>
+  </div>
+</section>
+
+<!-- QUIEN LO HACE -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Quién desarrolla el contenido</span>
+    <div class="about-box">
+      <p>Este proyecto es desarrollado por un equipo con formación en salud mental, neuropsicología y estudios islámicos, con el propósito de acercar las enseñanzas del islam a personas que desean comprenderlas con claridad, sensibilidad y profundidad.</p>
+      <p class="about-note">Los contenidos que requieren interpretación jurídica o doctrinal serán sometidos a revisión especializada antes de publicarse.</p>
     </div>
   </div>
 </section>
@@ -514,17 +538,6 @@
   </div>
 </section>
 
-<!-- QUIEN LO HACE -->
-<section>
-  <div class="wrap">
-    <span class="eyebrow">Quién desarrolla el contenido</span>
-    <div class="about-box">
-      <p>Este proyecto es desarrollado por un equipo con formación en salud mental, neuropsicología y estudios islámicos, con el propósito de acercar las enseñanzas del islam a personas que desean comprenderlas con claridad, sensibilidad y profundidad.</p>
-      <p class="about-note">Los contenidos religiosos que requieren interpretación jurídica o doctrinal son revisados con especialistas islámicos.</p>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section id="faq">
   <div class="wraps">
@@ -532,46 +545,46 @@
     <h2 class="section-title" style="margin-bottom:30px;">Antes de empezar</h2>
 
     <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">¿Necesito ser musulmán?</div>
-        <div class="faq-a"><p>No. Este espacio está abierto a cualquier persona, sea cual sea su creencia.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Tengo que saber árabe?</div>
-        <div class="faq-a"><p>No. Cada palabra se explica y se traduce; el árabe se aprende poco a poco.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿El registro es gratuito?</div>
-        <div class="faq-a"><p>Sí, el registro inicial no tiene costo.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Puedo visitar una mezquita?</div>
-        <div class="faq-a"><p>Sí, hay una ruta específica que te prepara para tu primera visita.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Tengo que realizar las prácticas?</div>
-        <div class="faq-a"><p>No. Puedes observar y leer sin participar en ninguna práctica.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Hay contenido para mujeres y hombres?</div>
-        <div class="faq-a"><p>Sí, hay apartados específicos donde corresponde, dentro de los mismos temas.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Qué corriente del islam se enseña?</div>
-        <div class="faq-a"><p>Se enseña el fondo común compartido por la mayoría de los musulmanes; las diferencias se explican sin tomar partido.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Cómo se verifican las fuentes?</div>
-        <div class="faq-a"><p>Cada contenido cita su origen en el Corán, la Sunnah o fuentes académicas reconocidas.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Puedo estudiar los módulos en cualquier orden?</div>
-        <div class="faq-a"><p>Sí, aunque recomendamos una ruta guiada para quien inicia desde cero.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Este contenido sustituye atención psicológica?</div>
-        <div class="faq-a"><p>No. Es un espacio educativo, no un tratamiento clínico.</p></div>
-      </div>
+      <details class="faq-item">
+        <summary>¿Necesito ser musulmán?</summary>
+        <p>No. Este espacio está abierto a cualquier persona, sea cual sea su creencia.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Tengo que saber árabe?</summary>
+        <p>No. Cada palabra se explica y se traduce; el árabe se aprende poco a poco.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Necesito registrarme para ver el contenido?</summary>
+        <p>No. Todos los módulos son abiertos y gratuitos. El registro es opcional, solo para recibir avisos cuando haya contenido nuevo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo visitar una mezquita?</summary>
+        <p>Sí, hay una ruta específica que te prepara para tu primera visita.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Tengo que realizar las prácticas?</summary>
+        <p>No. Puedes observar y leer sin participar en ninguna práctica.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Hay contenido para mujeres y hombres?</summary>
+        <p>Sí, hay apartados específicos donde corresponde, dentro de los mismos temas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué corriente del islam se enseña?</summary>
+        <p>Presentamos los fundamentos ampliamente compartidos del islam y señalamos con respeto las diferencias de interpretación cuando son relevantes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo se verifican las fuentes?</summary>
+        <p>Cada contenido cita su origen en el Corán, la Sunnah o fuentes académicas reconocidas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo estudiar los módulos en cualquier orden?</summary>
+        <p>Sí, aunque recomendamos una ruta guiada para quien inicia desde cero.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Este contenido sustituye atención psicológica?</summary>
+        <p>No. Es un espacio educativo, no un tratamiento clínico.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -582,8 +595,8 @@
     <div class="final-cta">
       <h2>Conocer comienza <em>con una pregunta</em></h2>
       <div class="final-actions">
-        <a href="registro.html" class="btn btn-primary">Crear mi acceso</a>
-        <a href="programa.html" class="btn btn-ghost">Ver el contenido del programa</a>
+        <a href="modulos.html" class="btn btn-primary">Comenzar a aprender</a>
+        <a href="registro.html" class="btn btn-ghost">Recibir avisos por correo</a>
       </div>
     </div>
   </div>
@@ -592,17 +605,6 @@
 <footer>
   Conociendo el Islam · Espiritualidad y vida cotidiana
 </footer>
-
-<script>
-  document.querySelectorAll('.faq-q').forEach(function(q){
-    q.addEventListener('click', function(){
-      var item = q.parentElement;
-      var wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
-      if(!wasOpen){ item.classList.add('open'); }
-    });
-  });
-</script>
 
 </body>
 </html>
