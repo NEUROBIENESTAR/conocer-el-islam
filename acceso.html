@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingresar con código | Conociendo el Islam</title>
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F4EF; --ink:#2C2B27; --ink-soft:#565349;
+    --sage-deep:#5C7268; --line: rgba(44,43,39,0.14); --error:#B5544A;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; min-height:100vh; background:var(--paper); color:var(--ink);
+    font-family:'Montserrat',sans-serif; line-height:1.7;
+    display:flex; align-items:center; justify-content:center; padding:40px 20px;
+  }
+  h1{ font-family:'Fraunces',serif; font-weight:400; font-size:24px; text-align:center; margin-bottom:8px; }
+  .sub{ text-align:center; font-size:14px; color:var(--ink-soft); margin-bottom:30px; }
+  .card{ width:100%; max-width:400px; background:#fff; border:1px solid var(--line); border-radius:16px; padding:40px 32px; }
+  .brand{ display:block; text-align:center; text-decoration:none; font-family:'Fraunces',serif; font-size:16px; color:var(--ink-soft); margin-bottom:24px; }
+  .brand em{ font-style:italic; color:var(--sage-deep); }
+  input{ width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:8px; font-size:15px; text-align:center; letter-spacing:0.05em; outline:none; margin-bottom:14px; }
+  input:focus{ border-color:var(--sage-deep); }
+  .btn{ width:100%; padding:14px; border:none; border-radius:100px; background:var(--sage-deep); color:#fff; font-weight:600; font-size:15px; cursor:pointer; }
+  .btn:hover{ background:var(--ink); }
+  .error{ display:none; color:var(--error); font-size:13px; text-align:center; margin-bottom:14px; }
+  .error.show{ display:block; }
+  .foot{ text-align:center; margin-top:20px; font-size:13px; color:var(--ink-soft); }
+  a{ color:var(--sage-deep); }
+</style>
+</head>
+<body>
+<div class="card">
+  <a href="index.html" class="brand">Conociendo el <em>Islam</em></a>
+  <h1>Ingresar con código</h1>
+  <p class="sub">Si alguien de confianza te compartió un código de acceso, ingrésalo aquí.</p>
+
+  <div class="error" id="error">Ese código no es válido. Revísalo e intenta de nuevo.</div>
+
+  <form id="codigo-form">
+    <input type="text" id="codigo" placeholder="Código de acceso" autocomplete="off" required>
+    <button type="submit" class="btn">Entrar</button>
+  </form>
+
+  <p class="foot">¿No tienes un código? <a href="registro.html">Crea tu acceso aquí</a></p>
+</div>
+
+<script>
+  // Código de cortesía, no es un mecanismo de seguridad real.
+  var CODIGO_VALIDO = "islam7777";
+
+  document.getElementById('codigo-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var valor = document.getElementById('codigo').value.trim().toUpperCase();
+    if (valor === CODIGO_VALIDO.toUpperCase()) {
+      window.location.href = "programa.html";
+    } else {
+      document.getElementById('error').classList.add('show');
+    }
+  });
+</script>
+</body>
+</html>
