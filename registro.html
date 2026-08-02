@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crear mi acceso | Conociendo el Islam</title>
+<meta name="description" content="Regístrate gratis para comenzar tu camino de aprendizaje sobre el islam, a tu propio ritmo.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F4EF;
+    --paper-deep:#EFEAE0;
+    --ink:#2C2B27;
+    --ink-soft:#565349;
+    --sage:#7A9188;
+    --sage-deep:#5C7268;
+    --sage-pale:#E4EAE6;
+    --terracotta:#C08552;
+    --terracotta-pale:#F0E1D0;
+    --line: rgba(44,43,39,0.14);
+    --error:#B5544A;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    min-height:100vh;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Montserrat',sans-serif;
+    line-height:1.7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+  }
+  h1,h2{ font-family:'Fraunces',serif; color:var(--ink); font-weight:500; margin:0; }
+  a{ color:var(--sage-deep); }
+
+  .card{
+    width:100%; max-width:460px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:44px 36px;
+    position:relative;
+  }
+  .brand{
+    display:block; text-align:center; text-decoration:none;
+    font-family:'Fraunces',serif; font-size:16px; color:var(--ink-soft);
+    margin-bottom:26px;
+  }
+  .brand em{ font-style:italic; color:var(--sage-deep); }
+
+  .card h1{
+    font-size:26px; text-align:center; margin-bottom:8px; font-weight:400;
+  }
+  .card .sub{
+    text-align:center; font-size:14px; color:var(--ink-soft);
+    margin-bottom:30px;
+  }
+
+  label{
+    display:block; font-size:13px; font-weight:600;
+    color:var(--ink-soft); margin-bottom:6px;
+    letter-spacing:0.01em;
+  }
+  .field{ margin-bottom:20px; }
+  input[type=text], input[type=email], select{
+    width:100%; padding:12px 14px;
+    border:1px solid var(--line); border-radius:8px;
+    font-family:'Montserrat',sans-serif; font-size:14.5px; color:var(--ink);
+    background:var(--paper);
+    outline:none;
+    transition:border-color .2s;
+  }
+  input:focus, select:focus{ border-color:var(--sage-deep); }
+
+  .privacy{
+    display:flex; align-items:flex-start; gap:10px;
+    font-size:12.8px; color:var(--ink-soft);
+    margin-bottom:26px;
+  }
+  .privacy input{ margin-top:3px; flex-shrink:0; }
+
+  .btn-submit{
+    width:100%; padding:14px; border:none; border-radius:100px;
+    background:var(--sage-deep); color:#fff;
+    font-family:'Montserrat',sans-serif; font-weight:600; font-size:15px;
+    cursor:pointer; transition:background .2s;
+  }
+  .btn-submit:hover{ background:var(--ink); }
+  .btn-submit:disabled{ opacity:0.6; cursor:default; }
+
+  .error-msg{
+    display:none;
+    background:#FBEBE9; color:var(--error);
+    font-size:13px; padding:10px 14px; border-radius:8px;
+    margin-bottom:18px;
+  }
+  .error-msg.show{ display:block; }
+
+  .success{
+    display:none;
+    text-align:center;
+  }
+  .success.show{ display:block; }
+  .success-icon{
+    width:56px; height:56px; border-radius:50%;
+    background:var(--sage-pale);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 20px auto;
+  }
+  .success h2{ font-size:22px; margin-bottom:10px; }
+  .success p{ font-size:14.5px; color:var(--ink-soft); margin-bottom:26px; }
+  .btn-outline{
+    display:inline-block; padding:12px 26px; border-radius:100px;
+    border:1px solid var(--line); text-decoration:none; color:var(--ink);
+    font-size:14px; font-weight:500;
+  }
+
+  .foot-note{
+    text-align:center; margin-top:22px; font-size:13px; color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <a href="index.html" class="brand">Conociendo el <em>Islam</em></a>
+
+  <!-- FORMULARIO -->
+  <div id="form-wrap">
+    <h1>Crear mi acceso</h1>
+    <p class="sub">Gratis. Sin compromiso. A tu propio ritmo.</p>
+
+    <div class="error-msg" id="error-msg">Algo no salió bien. Intenta de nuevo en unos segundos.</div>
+
+    <form id="registro-form">
+      <div class="field">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+
+      <div class="field">
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" name="correo" required>
+      </div>
+
+      <div class="field">
+        <label for="interes">¿Qué te interesa principalmente? <span style="font-weight:400;">(opcional)</span></label>
+        <select id="interes" name="interes">
+          <option value="">Prefiero no decirlo</option>
+          <option value="Conocer el islam desde cero">Conocer el islam desde cero</option>
+          <option value="Visitar una mezquita">Visitar una mezquita</option>
+          <option value="Espiritualidad y sentido de vida">Espiritualidad y sentido de vida</option>
+          <option value="Psicología islámica">Psicología islámica</option>
+          <option value="Vida cotidiana y hábitos">Vida cotidiana y hábitos</option>
+          <option value="Soy musulmán recientemente">Soy musulmán recientemente</option>
+          <option value="Curiosidad general">Curiosidad general</option>
+        </select>
+      </div>
+
+      <label class="privacy">
+        <input type="checkbox" id="privacidad" name="privacidad" required>
+        <span>He leído y acepto el <a href="aviso-privacidad.html" target="_blank">aviso de privacidad</a>.</span>
+      </label>
+
+      <button type="submit" class="btn-submit" id="btn-submit">Crear mi acceso</button>
+    </form>
+
+    <p class="foot-note">¿Ya tienes acceso? <a href="login.html">Inicia sesión</a></p>
+  </div>
+
+  <!-- ESTADO DE ÉXITO -->
+  <div class="success" id="success">
+    <div class="success-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 12L9 17L20 6" stroke="#5C7268" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2>As-salāmu ʿalaykum</h2>
+    <p>Tu registro se guardó correctamente. Muy pronto podrás continuar tu camino de aprendizaje.</p>
+    <a href="index.html" class="btn-outline">Volver al inicio</a>
+  </div>
+</div>
+
+<script>
+  var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiB-iZ-uzqPyPlofiuQxoIInS_d-8VuOqxnxwcxMRpebQ_qZzFBs1bYNiqUHNRMk5J/exec";
+
+  var form = document.getElementById('registro-form');
+  var btn = document.getElementById('btn-submit');
+  var errorMsg = document.getElementById('error-msg');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorMsg.classList.remove('show');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    var data = new URLSearchParams();
+    data.append('nombre', form.nombre.value.trim());
+    data.append('correo', form.correo.value.trim());
+    data.append('interes', form.interes.value);
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: data
+    })
+    .then(function(){
+      document.getElementById('form-wrap').style.display = 'none';
+      document.getElementById('success').classList.add('show');
+    })
+    .catch(function(){
+      errorMsg.classList.add('show');
+      btn.disabled = false;
+      btn.textContent = 'Crear mi acceso';
+    });
+  });
+</script>
+
+</body>
+</html>
