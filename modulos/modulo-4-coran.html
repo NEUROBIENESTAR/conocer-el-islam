@@ -47,10 +47,6 @@
   .beat h2{ font-size:21px; margin-bottom:14px; }
   .beat p{ font-size:15.5px; color:var(--ink); }
 
-  .icon-heading{ display:flex; align-items:center; gap:14px; margin-bottom:14px; }
-  .icon-heading h2{ margin-bottom:0; }
-  .icon-heading svg{ flex-shrink:0; }
-
   .pull-quote{
     background:var(--terracotta-pale); border-radius:12px;
     padding:22px 26px; margin:18px 0;
@@ -59,14 +55,16 @@
     font-family:'Fraunces',serif; font-style:italic; font-size:17px;
     color:var(--ink); margin:0; line-height:1.55;
   }
-  .pull-quote cite{
-    display:block; margin-top:10px; font-size:12.5px; font-style:normal;
-    color:var(--ink-soft); letter-spacing:0.03em;
-  }
 
   .section-img{
     width:100%; border-radius:14px; margin:18px 0; display:block;
   }
+
+  .limits{
+    background:var(--paper-deep); border-left:3px solid var(--ink-soft);
+    padding:16px 20px; border-radius:2px; margin:16px 0;
+  }
+  .limits p{ margin:0; font-size:14px; color:var(--ink-soft); }
 
   .word-box{
     background:#fff; border:1px solid var(--line); border-radius:10px;
@@ -75,6 +73,21 @@
   .word-ar{ font-family:'Fraunces',serif; font-style:italic; font-size:16px; color:var(--ink); }
   .word-mean{ font-size:14px; color:var(--ink-soft); margin-top:4px; }
   .word-mean b{ color:var(--sage-deep); font-weight:600; }
+
+  .expand{
+    border:1px solid var(--line); border-radius:12px; margin-top:18px;
+    overflow:hidden;
+  }
+  .expand summary{
+    padding:15px 20px; cursor:pointer; list-style:none;
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:'Fraunces',serif; font-size:16px; color:var(--ink);
+    background:#fff;
+  }
+  .expand summary::-webkit-details-marker{ display:none; }
+  .expand summary::after{ content:"+"; font-size:20px; color:var(--sage-deep); font-weight:300; }
+  .expand[open] summary::after{ content:"–"; }
+  .expand-body{ padding:6px 20px 20px 20px; background:#fff; }
 
   .two-angles{
     display:grid; grid-template-columns:1fr; gap:14px; margin-top:16px;
@@ -94,7 +107,7 @@
   .angle p{ margin:0; font-size:14px; color:var(--ink); }
 
   .steps-read{
-    display:flex; flex-direction:column; gap:10px; margin-top:16px; counter-reset:step;
+    display:flex; flex-direction:column; gap:10px; margin-top:16px;
   }
   .step-read{
     display:flex; gap:14px; align-items:flex-start;
@@ -160,71 +173,171 @@
   </header>
 
   <section class="beat">
-    <h2>El libro que se mira desde cualquier ángulo</h2>
-    <p>Hay libros que se leen una vez. El Corán se recita con reglas de entonación propias (tajwid), se memoriza, se hereda de generación en generación — y sigue pareciendo el mismo libro nuevo cada vez. Se le puede mirar desde lo terrenal (historia, lengua, estructura) o desde lo espiritual (revelación, guía, encuentro) — y desde cualquiera de los dos lados, sigue siendo extraordinario.</p>
-    <p>No hace falta elegir un solo ángulo. Este módulo recorre ambos, uno a la vez.</p>
+    <h2>Una revelación que se escucha</h2>
+    <p>El Corán es el libro sagrado del islam. Para los musulmanes, contiene la palabra de Dios revelada al profeta Muhammad ﷺ.</p>
+    <p>Pero el Corán no nació primero como un libro colocado en una estantería. Fue escuchado, recitado, memorizado y compartido en voz alta. Por eso, acercarse al Corán no es solamente leer. También es escuchar.</p>
+    <p>Hay palabras que se comprenden con la mente. Otras empiezan a tocarte antes de que puedas explicarlas.</p>
   </section>
 
   <section class="beat">
-    <h2>Lo terrenal primero: un objeto histórico</h2>
+    <h2>Un libro que permanece nuevo</h2>
     <img class="section-img" src="../assets/biblioteca-mezquita.webp" alt="Estantería de madera con libros dentro de una mezquita">
-    <p>114 suras (capítulos), sin orden cronológico ni temático — un dato que desconcierta al principio y que precisamente por eso engancha. Las suras mecanas, reveladas primero, son cortas e intensas; las medinenses, más largas y legislativas.</p>
-    <p>Se transmitió primero de forma oral, memorizado por comunidades enteras casi al mismo tiempo que se revelaba. Hoy sigue siendo, según registros extensos de memorización formal, uno de los textos más memorizados en el mundo por millones de personas en su forma íntegra — un ejercicio de transmisión oral sin comparación clara en la literatura antigua. Los manuscritos más tempranos que se conservan (algunos datados por radiocarbono) permiten documentar buena parte de esa historia.</p>
+    <p>Hay libros que se leen una vez y se guardan. El Corán, en cambio, forma parte del ritmo cotidiano de millones de personas. Se recita en la oración, se aprende de memoria, se transmite de generación en generación y se escucha incluso antes de comprender completamente su significado.</p>
+    <p>El Corán puede mirarse desde distintos ángulos. Desde la historia, es un texto surgido en la Arabia del siglo VII que transformó una lengua y dejó una huella profunda en numerosas sociedades. Desde la literatura, posee un ritmo y una estructura difíciles de clasificar por completo. Desde la experiencia humana, es uno de los textos más recitados, memorizados y transmitidos del mundo. Y desde la fe islámica, es algo todavía mayor: la palabra de Dios revelada al profeta Muhammad ﷺ.</p>
+    <p>No hace falta elegir un solo ángulo para comenzar. Puedes acercarte con curiosidad, con preguntas, con fe, o simplemente con el deseo de escuchar.</p>
   </section>
 
   <section class="beat">
-    <h2>La belleza literaria</h2>
-    <p>No es prosa ni es verso: es <em>saj'</em> — una prosa rimada con cadencia propia, que desafió a los poetas árabes de una época que consideraba la poesía su arte más elevado. Cambios abruptos de voz gramatical, juramentos por fenómenos naturales, y una estructura en anillo donde el centro de un pasaje —no el final— suele contener su clave. Es una arquitectura textual que la crítica literaria moderna sigue estudiando.</p>
+    <h2>El mismo texto, una experiencia distinta</h2>
+    <p>Una persona puede leer un versículo en un momento de calma y comprenderlo de una manera. Puede volver a ese mismo versículo durante una pérdida, una decisión o una etapa de incertidumbre, y sentir que ahora le habla desde otro lugar.</p>
+    <p>Las palabras no cambiaron. Cambió la persona que regresó a ellas.</p>
+  </section>
+
+  <section class="beat">
+    <h2>El árabe y sus traducciones</h2>
+    <p>El Corán fue revelado en árabe. Por eso, en la tradición islámica, una traducción se entiende como una aproximación a sus significados, no como una sustitución completa del original.</p>
+    <p>No necesitas saber árabe para comenzar. Puedes leer una traducción en español mientras escuchas la recitación — comprender y escuchar son dos maneras distintas de acercarte al mismo texto.</p>
+  </section>
+
+  <section class="beat">
+    <h2>Palabras para orientarte en el texto</h2>
+    <div class="word-box">
+      <div class="word-ar">Sura</div>
+      <div class="word-mean">Un capítulo. El Corán tiene 114.</div>
+    </div>
+    <div class="word-box">
+      <div class="word-ar">Ayah</div>
+      <div class="word-mean">Un versículo — la palabra también significa "señal".</div>
+    </div>
+    <div class="word-box">
+      <div class="word-ar">Juz'</div>
+      <div class="word-mean">Una de las 30 partes en que se divide el Corán para facilitar su lectura — muy usado durante Ramadán.</div>
+    </div>
+    <div class="word-box">
+      <div class="word-ar">Tajwid</div>
+      <div class="word-mean">Las reglas que ayudan a recitarlo con una pronunciación clara y cuidadosa.</div>
+    </div>
+
+    <details class="expand">
+      <summary>Profundiza: más palabras del Corán</summary>
+      <div class="expand-body">
+        <div class="word-box">
+          <div class="word-ar">Tartil</div>
+          <div class="word-mean">La manera pausada, clara y medida de recitar — el Corán mismo la pide: "recita de manera clara y pausada" (73:4).</div>
+        </div>
+        <div class="word-box">
+          <div class="word-ar">Qari / Qari'a</div>
+          <div class="word-mean">Quien recita el Corán, especialmente con formación específica en su recitación.</div>
+        </div>
+        <div class="word-box">
+          <div class="word-ar">Hafiz / Hafiza</div>
+          <div class="word-mean">Quien ha memorizado el Corán completo. No todo qari es hafiz, aunque muchos reúnen ambas formaciones.</div>
+        </div>
+        <div class="word-box">
+          <div class="word-ar">Tilawah</div>
+          <div class="word-mean">Recitar el texto siguiendo y atendiendo su mensaje, no solo su sonido.</div>
+        </div>
+        <div class="word-box">
+          <div class="word-ar">Tadabbur</div>
+          <div class="word-mean">Detenerse a reflexionar profundamente sobre sus significados y consecuencias.</div>
+        </div>
+        <div class="word-box">
+          <div class="word-ar">Tafsir</div>
+          <div class="word-mean">La explicación estudiada del texto mediante lengua, contexto, tradición y conocimiento especializado.</div>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section class="beat">
+    <h2>Recitar con cuidado</h2>
+    <p>El tajwid enseña a dar a cada letra su pronunciación y a cada pausa su lugar. No se trata de cantar ni de lucirse. Se trata de recitar con cuidado.</p>
+    <p>Quienes aprenden tajwid a fondo pueden pasar años perfeccionándolo, pero una persona que empieza no necesita hacerlo todo de inmediato — primero puede escuchar, después repetir una frase, luego aprender poco a poco. La meta no es impresionar a quien escucha. Es tratar la palabra con respeto.</p>
     <div class="pull-quote">
-      <p>"El Corán es una obra que nos produce un enorme respeto, nos asombra y, al final, nos obliga a la admiración y reverencia."</p>
-      <cite>— Goethe, notas al Diván de Oriente y Occidente</cite>
+      <p>Hay algo que muchos describen al escuchar una recitación bien hecha: una sensación casi física, la piel que se eriza. El propio Corán lo menciona — cómo la piel puede estremecerse al oírlo, y el corazón ablandarse después (Corán 39:23).</p>
     </div>
   </section>
 
   <section class="beat">
-    <h2>El milagro, visto desde dos ángulos</h2>
-    <p>Para los musulmanes, el Corán es <em>i'jaz</em> — un milagro, la prueba misma de que su origen no es humano. Es una afirmación de fe, no algo que buscamos demostrar aquí con ciencia ni con literatura. Pero incluso quien no comparte esa fe puede reconocer algo extraordinario desde otro ángulo — el humano, el terrenal.</p>
+    <h2>Lo que la ciencia puede observar</h2>
+    <p>Algunos estudios han explorado lo que ocurre cuando una persona escucha la recitación del Corán. Se han observado posibles cambios relacionados con la atención, la tranquilidad y la disminución del estrés percibido.</p>
+    <div class="limits">
+      <p>Pero la ciencia solo puede estudiar una parte de la experiencia. No puede medir lo que significa sentirse guiado, recordar a Dios, o reconocer un mensaje como revelación. Puede observar algunas respuestas del cuerpo. No puede decidir el significado espiritual de lo que se escucha.</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <h2>El Corán como texto histórico</h2>
+    <p>114 suras (capítulos), sin orden cronológico ni temático — un dato que desconcierta al principio y que precisamente por eso engancha. Las suras asociadas principalmente con el periodo de La Meca suelen ser más breves y concentrarse en la unicidad de Dios, la responsabilidad moral y la vida futura; muchas de las asociadas con Medina son más extensas y abordan también la vida comunitaria, familiar y jurídica.</p>
+    <p>Hoy sigue siendo, según registros extensos de memorización formal, uno de los textos más memorizados en el mundo por millones de personas en su forma íntegra. Los manuscritos más tempranos que se conservan —algunos datados por radiocarbono— permiten documentar buena parte de esa historia.</p>
+  </section>
+
+  <section class="beat">
+    <h2>Cómo tomó forma el mushaf</h2>
+    <p>Según la tradición islámica, la revelación llegó al profeta Muhammad ﷺ de manera gradual durante aproximadamente 23 años, por medio del ángel Jibril. Sus compañeros la aprendían de memoria y varios escribas registraban los pasajes por escrito conforme se revelaban.</p>
+    <p>Después de su muerte, y ante la pérdida de algunos recitadores en batalla, el primer califa, Abu Bakr, encargó reunir y verificar los fragmentos escritos y la transmisión oral en una recopilación oficial. Décadas después, bajo el califato de Uthman ibn Affan, se prepararon y distribuyeron códices basados en una escritura consonántica común, para evitar que las diferencias regionales provocaran divisiones en la recitación — la base de las copias que existen hoy.</p>
+    <p style="font-size:13.5px; color:var(--ink-soft);">Este proceso lo describen con detalle las fuentes islámicas; su reconstrucción histórica exacta sigue siendo también objeto de estudio académico.</p>
+  </section>
+
+  <section class="beat">
+    <h2>Una forma literaria difícil de clasificar</h2>
+    <p>El Corán no sigue las reglas de la poesía árabe clásica ni se comporta como una prosa ordinaria. Combina ritmo, repetición, rima, imágenes, cambios de voz y estructuras que atraviesan pasajes completos. Algunas secciones recuerdan al <em>saj'</em>, la prosa rimada árabe, pero el conjunto desarrolla una forma propia que no cabe por completo en una sola categoría literaria — algo que la crítica literaria sigue estudiando hoy.</p>
+  </section>
+
+  <section class="beat">
+    <h2>El milagro desde la fe</h2>
     <div class="two-angles">
       <div class="angle terrenal">
-        <span class="a-tag">Ángulo terrenal</span>
-        <p>Un hombre sin educación formal en un pueblo del desierto produjo, o transmitió, el texto que redefinió una lengua entera y sigue intacto 1,400 años después.</p>
+        <span class="a-tag">Ángulo histórico</span>
+        <p>Un texto proclamado en la Arabia del siglo VII transformó profundamente la lengua, la cultura, el derecho y la vida intelectual de amplias regiones del mundo.</p>
       </div>
       <div class="angle espiritual">
         <span class="a-tag">Ángulo espiritual</span>
-        <p>Para quien lo recibe con fe, cada palabra es un mensaje directo de Dios — no un texto sobre Dios, sino Su propia voz.</p>
+        <p>Para el musulmán, el Corán no es la composición de Muhammad ﷺ, sino la palabra de Dios que él recibió y transmitió.</p>
       </div>
     </div>
   </section>
 
   <section class="beat">
-    <h2>Un libro más entre libros sagrados</h2>
-    <p>El Corán no se presenta solo. Menciona la Torá y el Evangelio como revelaciones previas de Dios, y a Moisés y Jesús como mensajeros anteriores. No los invalida — afirma continuarlos. Para quien viene de una tradición judía o cristiana, esto no es un territorio ajeno: es, en parte, familiar.</p>
+    <h2>Los números: entre la fascinación y el debate</h2>
+    <p>Vas a encontrar, sobre todo en internet, afirmaciones sobre patrones numéricos en el Corán — palabras que se repiten el mismo número de veces que su opuesto, o coincidencias con ciclos del calendario. Es un tema que fascina a muchos musulmanes y ha generado bastante literatura popular.</p>
+    <div class="limits">
+      <p>Conviene saber que esto no es un consenso, ni siquiera dentro del islam: hay estudiosos islámicos que han señalado que varias de estas cuentas están mal hechas o exageradas, y lo describen como una lectura entusiasta más que como un hecho verificado. Aquí preferimos no presentarlo como prueba de nada — es, en el mejor de los casos, una curiosidad debatida, no un dato establecido.</p>
+    </div>
   </section>
 
   <section class="beat">
-    <h2>Cómo acercarte a leerlo</h2>
-    <p>Leerlo no es solo un ejercicio intelectual — es una interacción. Un protocolo simple para empezar:</p>
+    <h2>Una revelación dentro de una historia mayor</h2>
+    <p>El Corán habla de muchos profetas conocidos también por el judaísmo y el cristianismo, como Adán, Noé, Abraham, Moisés, María y Jesús. Reconoce la Torá entregada a Moisés y el Evangelio entregado a Jesús. Al mismo tiempo, afirma confirmar, aclarar y corregir aspectos de las tradiciones anteriores desde su propia perspectiva.</p>
+    <p>Para una persona procedente de una tradición judía o cristiana, habrá nombres y relatos familiares, aunque no siempre aparezcan con la misma interpretación.</p>
+  </section>
+
+  <section class="beat">
+    <h2>Cómo comenzar</h2>
+    <p>No existe una única manera de comenzar, ni es una obligación religiosa hacerlo de un modo específico. Puedes crear una pausa breve que te ayude a leer con atención:</p>
     <div class="steps-read">
-      <div class="step-read"><span class="s-num">1</span><p>Sentarte con la espalda recta, manos limpias.</p></div>
-      <div class="step-read"><span class="s-num">2</span><p>Tres respiraciones, para llegar con atención, no con prisa.</p></div>
-      <div class="step-read"><span class="s-num">3</span><p>Una intención breve (niyyah): ¿para qué abro este libro hoy?</p></div>
-      <div class="step-read"><span class="s-num">4</span><p><em>Bismillah</em> — en el nombre de Dios, antes de comenzar.</p></div>
-      <div class="step-read"><span class="s-num">5</span><p>Leer despacio, en voz audible aunque sea baja — fue revelado como sonido antes que como texto.</p></div>
+      <div class="step-read"><span class="s-num">1</span><p>Busca un lugar tranquilo.</p></div>
+      <div class="step-read"><span class="s-num">2</span><p>Formula una intención sencilla.</p></div>
+      <div class="step-read"><span class="s-num">3</span><p>Di <em>Bismillah</em> — en el nombre de Dios.</p></div>
+      <div class="step-read"><span class="s-num">4</span><p>Lee pocos versículos junto con una traducción comprensible.</p></div>
+      <div class="step-read"><span class="s-num">5</span><p>Escucha después su recitación en árabe.</p></div>
+      <div class="step-read"><span class="s-num">6</span><p>Quédate con una palabra, una pregunta o una idea.</p></div>
     </div>
-    <p>La sura con la que casi todos empiezan es <strong>Al-Fātiḥah</strong> ("La Apertura") — siete versículos breves que resumen, según muchos eruditos, la esencia de todo el libro. Es también la sura que se repite en cada unidad de la oración.</p>
+    <p style="font-size:13.5px; color:var(--ink-soft);">No necesitas comprenderlo todo ni sentir algo extraordinario. Para preguntas más complejas, conviene acompañar la traducción con comentarios reconocidos (tafsir) y preguntar a personas formadas — una traducción aislada no siempre muestra el contexto completo. La relación con el Corán se construye volviendo.</p>
   </section>
 
   <section class="beat">
+    <h2>Una puerta de siete versículos: Al-Fātiḥah</h2>
+    <p>Al-Fātiḥah significa "La Apertura". Es el primer capítulo del Corán y está formado por siete versículos. Habla de la misericordia de Dios, de la adoración, de la ayuda y de la búsqueda de guía. No es solamente la primera página del libro — es una súplica que se repite en cada unidad de la oración.</p>
+    <p>Puedes escucharla una vez sin leer. Después leer su significado. Luego escucharla de nuevo, y observar qué cambia.</p>
     <div class="pull-quote">
-      <p>"El Corán es como una novia tímida: solo se descubre para quien la busca con verdadero anhelo."</p>
-      <cite>— dicho tradicionalmente atribuido a la enseñanza sufí</cite>
+      <p>En la literatura contemplativa aparece a veces la imagen de un texto que no se entrega de golpe, sino que revela nuevas capas a quien vuelve con paciencia.</p>
     </div>
-    <p>Esa imagen —un libro que no se entrega de golpe, sino poco a poco, a quien vuelve a él con paciencia— resume bien lo que este módulo apenas empieza a abrir. No hace falta comprenderlo todo en la primera lectura. Ni en la décima.</p>
   </section>
 
   <div class="next">
     <h2>Siguiente paso</h2>
-    <p>Cuando estés listo, el quinto módulo conoce a Muhammad ﷺ — la persona, el líder, y el profeta.</p>
+    <p>El Corán no exige que llegues comprendiéndolo todo. Te invita a llegar, escuchar y volver. Cuando estés listo, el quinto módulo conoce a Muhammad ﷺ — la persona que recibió y transmitió esta revelación.</p>
     <a href="../modulos.html" class="btn">Ver todos los módulos →</a>
   </div>
 </div>
