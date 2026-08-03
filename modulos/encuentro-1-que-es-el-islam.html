@@ -63,6 +63,56 @@
   .btn{ display:inline-block; padding:13px 26px; border-radius:100px; background:var(--terracotta); color:#fff; text-decoration:none; font-weight:600; font-size:14px; }
 
   footer{ text-align:center; padding:30px 0; font-size:12.5px; color:var(--ink-soft); border-top:1px solid var(--line); }
+
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+
+  section.beat.premium{ padding-top:44px; }
+  .premium .title{ font-size:21px; margin-bottom:24px; text-align:center; }
+  .cards{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  @media(min-width:600px){
+    .cards{ grid-template-columns:1fr 1fr 1fr; gap:16px; }
+  }
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .card .card-img{
+    width:100%;
+    display:block;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    object-position:center top;
+  }
+  .card .card-body{
+    padding:16px 16px 18px 16px;
+  }
+  .icon-line{
+    width:26px; height:2px; margin:0 0 10px 0;
+  }
+  .card.din .icon-line{ background:var(--terracotta); }
+  .card.fitrah .icon-line{ background:var(--sage-deep); }
+  .card.ihsan .icon-line{ background:#5C7A94; }
+
+  .card .subtitle{
+    font-family:'Fraunces',serif; font-style:italic; font-size:16.5px;
+    color:var(--ink); margin-bottom:12px;
+  }
+  .card p{ font-size:12.8px; color:var(--ink-soft); margin:0 0 0.7em 0; }
+  .card p.highlight{
+    font-family:'Fraunces',serif; font-style:italic; color:var(--ink);
+    font-size:13.5px; margin-top:10px; margin-bottom:0;
+  }
 </style>
 </head>
 <body>
@@ -81,122 +131,95 @@
     <p class="lead">¿Dónde encuentro orientación y sentido en medio de una vida incierta? Empezamos por ahí.</p>
   </header>
 
- <section class="beat">
-  <h2>Bienvenida</h2>
+  <section class="beat">
+    <h2>Bienvenida</h2>
 
-  <p>No necesitas saber.<br>
-  No necesitas creer.<br>
-  No necesitas decidir nada ahora.</p>
+    <p>No necesitas saber.<br>
+    No necesitas creer.<br>
+    No necesitas decidir nada ahora.</p>
 
-  <p>Solo estar aquí.</p>
+    <p>Solo estar aquí.</p>
 
-  <p>
-    Este es un espacio para acercarte sin presión, sin miedo, sin exigencias.
-    Para mirar con calma.
-    Para hacer preguntas, incluso las que nunca has dicho en voz alta.
-  </p>
+    <p>
+      Este es un espacio para acercarte sin presión, sin miedo, sin exigencias.
+      Para mirar con calma.
+      Para hacer preguntas, incluso las que nunca has dicho en voz alta.
+    </p>
 
-  <p>
-    Vamos a ir poco a poco.
-    Desde lo que ya sientes… hacia lo que quizás estabas buscando sin saberlo.
-  </p>
-</section>
+    <p>
+      Vamos a ir poco a poco.
+      Desde lo que ya sientes… hacia lo que quizás estabas buscando sin saberlo.
+    </p>
+  </section>
 
   <section class="beat">
     <h2>Un solo Dios</h2>
-    <p>En el fondo de todo hay una idea sencilla:Dios es Uno. No es algo nuevo.Es el mismo mensaje que vivieron Abraham, Moisés y Jesús.El islam no viene a romper,viene a recordar. No te pide que abandones lo que eres,
-te invita a reconocer de dónde vienes.</p>
+    <p>En el fondo de todo hay una idea sencilla: Dios es Uno. No es algo nuevo. Es el mismo mensaje que vivieron Abraham, Moisés y Jesús. El islam no viene a romper, viene a recordar. No te pide que abandones lo que eres, te invita a reconocer de dónde vienes.</p>
   </section>
 
   <section class="beat">
     <h2>Islam, musulmán, Allah</h2>
     <div class="word-box">
       <div class="word-ar">Islam</div>
-      <div class="word-mean">De la raíz <em>s-l-m</em>: <b>paz y entrega voluntaria</b>, Es una paz que aparece cuando dejas de resistir y empiezas a confiar.</div>
+      <div class="word-mean">De la raíz <em>s-l-m</em>: <b>paz y entrega voluntaria</b>. Es una paz que aparece cuando dejas de resistir y empiezas a confiar.</div>
     </div>
     <div class="word-box">
       <div class="word-ar">Musulmán</div>
-      <div class="word-mean">Quien practica esa entrega.Es quien decide caminar hacia esa paz. Paso a paso, incluso con dudas.</div>
+      <div class="word-mean">Quien practica esa entrega. Es quien decide caminar hacia esa paz, paso a paso, incluso con dudas.</div>
     </div>
     <div class="word-box">
       <div class="word-ar">Allah</div>
-      <div class="word-mean">Simplemente <b>"Dios"</b> en árabe — El mismo Dios nombrado en árabe.</div>
+      <div class="word-mean">Simplemente <b>"Dios"</b> en árabe — el mismo Dios nombrado en árabe.</div>
     </div>
   </section>
 
   <section class="beat premium">
-  <h2 class="title">Tres palabras que abren el camino</h2>
+    <h2 class="title">Tres palabras que abren el camino</h2>
 
-  <div class="cards">
+    <div class="cards">
 
-    <!-- DIN -->
-    <div class="card din">
-      <div class="icon-line"></div>
-      <h3>Dīn</h3>
-      <p class="subtitle">No es una religión de momentos.</p>
+      <div class="card din">
+        <img class="card-img" src="../assets/din.webp" alt="Dīn — no es una religión de momentos">
+        <div class="card-body">
+          <div class="icon-line"></div>
+          <h3 class="sr-only">Dīn</h3>
+          <p class="subtitle sr-only">No es una religión de momentos.</p>
+          <p>Es cómo vives cuando despiertas, cómo hablas con otros, cómo reaccionas cuando algo duele, cómo agradeces cuando algo llega.</p>
+          <p>Es recordar a Dios antes de empezar. Es elegir no herir cuando podrías hacerlo. Es confiar cuando no entiendes.</p>
+          <p class="highlight">Se vive en lo cotidiano. En lo pequeño. En todo.</p>
+        </div>
+      </div>
 
-      <p>
-        Es cómo vives cuando despiertas, cómo hablas con otros,
-        cómo reaccionas cuando algo duele,
-        cómo agradeces cuando algo llega.
-      </p>
+      <div class="card fitrah">
+        <img class="card-img" src="../assets/fitrah.webp" alt="Fitrah — dentro de ti hay algo que ya reconoce la verdad">
+        <div class="card-body">
+          <div class="icon-line"></div>
+          <h3 class="sr-only">Fitrah</h3>
+          <p class="subtitle sr-only">Dentro de ti hay algo que ya reconoce la verdad.</p>
+          <p>Antes de todo lo aprendido, hay una parte de ti que sabe.</p>
+          <p>Sabe que hay un origen. Sabe que no estás solo. Sabe que hay un solo Dios.</p>
+          <p class="highlight">No necesitas aprender desde cero. Solo recordar.</p>
+        </div>
+      </div>
 
-      <p>
-        Es recordar a Dios antes de empezar.
-        Es elegir no herir cuando podrías hacerlo.
-        Es confiar cuando no entiendes.
-      </p>
+      <div class="card ihsan">
+        <img class="card-img" src="../assets/ihsan.webp" alt="Ihsan — es hacer las cosas con intención">
+        <div class="card-body">
+          <div class="icon-line"></div>
+          <h3 class="sr-only">Ihsan</h3>
+          <p class="subtitle sr-only">Es hacer las cosas con intención.</p>
+          <p>No solo hacer lo correcto, sino hacerlo bien, con presencia, con conciencia.</p>
+          <p>Es actuar como si todo importara. Porque sí importa.</p>
+          <p class="highlight">Incluso lo que nadie ve.</p>
+        </div>
+      </div>
 
-      <p class="highlight">Se vive en lo cotidiano. En lo pequeño. En todo.</p>
     </div>
-
-    <!-- FITRAH -->
-    <div class="card fitrah">
-      <div class="icon-line"></div>
-      <h3>Fitrah</h3>
-      <p class="subtitle">Dentro de ti hay algo que ya reconoce la verdad.</p>
-
-      <p>
-        Antes de todo lo aprendido,
-        hay una parte de ti que sabe.
-      </p>
-
-      <p>
-        Sabe que hay un origen.
-        Sabe que no estás solo.
-        Sabe que hay un solo Dios.
-      </p>
-
-      <p class="highlight">
-        No necesitas aprender desde cero. Solo recordar.
-      </p>
-    </div>
-
-    <!-- IHSAN -->
-    <div class="card ihsan">
-      <div class="icon-line"></div>
-      <h3>Ihsan</h3>
-      <p class="subtitle">Es hacer las cosas con intención.</p>
-
-      <p>
-        No solo hacer lo correcto,
-        sino hacerlo bien, con presencia, con conciencia.
-      </p>
-
-      <p>
-        Es actuar como si todo importara.
-        Porque sí importa.
-      </p>
-
-      <p class="highlight">Incluso lo que nadie ve.</p>
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <section class="beat">
     <h2>Religión, espiritualidad, cultura y forma de vida</h2>
-    <p> No todo lo que ves en nombre del islam es islam. A veces es cultura, costumbre, historia de un lugar. Aprender a distinguirlo te da libertad.Te permite quedarte con lo esencial…y no perderte en lo externo.</p>
+    <p>No todo lo que ves en nombre del islam es islam. A veces es cultura, costumbre, historia de un lugar. Aprender a distinguirlo te da libertad. Te permite quedarte con lo esencial… y no perderte en lo externo.</p>
   </section>
 
   <section class="beat">
