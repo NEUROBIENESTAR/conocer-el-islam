@@ -157,7 +157,9 @@
     background:#fff; border:1px solid var(--line); border-radius:10px;
     padding:20px 22px; font-size:15px; color:var(--ink);
     display:flex; gap:12px; align-items:flex-start;
+    text-decoration:none; transition:.2s ease;
   }
+  .q-card:hover{ border-color:var(--sage-deep); transform:translateX(2px); }
   .q-card::before{
     content:"?"; font-family:'Fraunces',serif; font-style:italic;
     color:var(--sage-deep); font-size:20px; line-height:1;
@@ -354,10 +356,10 @@
       <h2>¿Alguna vez te has preguntado…?</h2>
     </div>
     <div class="q-grid">
-      <div class="q-card">¿Qué significa realmente "islam"?</div>
-      <div class="q-card">¿Por qué los musulmanes oran cinco veces al día?</div>
-      <div class="q-card">¿Qué puede aportar el islam a la vida cotidiana?</div>
-      <div class="q-card">¿Cómo comenzar a conocerlo sin sentirme perdido?</div>
+      <a class="q-card" href="modulos/encuentro-1-que-es-el-islam.html">¿Qué significa realmente "islam"?</a>
+      <a class="q-card" href="modulos/modulo-3-oracion.html">¿Por qué los musulmanes oran cinco veces al día?</a>
+      <a class="q-card" href="rutas/vida-cotidiana.html">¿Qué puede aportar el islam a la vida cotidiana?</a>
+      <a class="q-card" href="modulos.html">¿Cómo comenzar a conocerlo sin sentirme perdido?</a>
     </div>
     <p class="q-close">Aquí puedes comenzar a encontrar respuestas — sin miedo, sin presión, sin conocimientos previos.</p>
   </div>
@@ -372,18 +374,18 @@
       <p class="section-sub">El islam no es solamente un conjunto de rituales. Es una forma de comprender la relación con Dios, con uno mismo, con otras personas y con la vida cotidiana. Aquí distinguimos sus enseñanzas de las costumbres culturales y de las conductas individuales, desde cuatro ángulos:</p>
     </div>
     <div class="persp-grid">
-      <div class="persp-card">
+      <a class="persp-card" href="modulos.html" style="text-decoration:none; display:block;">
         <h3>Islam y espiritualidad</h3>
         <p>Corán, Sunnah, propósito, adoración, misericordia y vida interior.</p>
-      </div>
-      <div class="persp-card">
+      </a>
+      <a class="persp-card" href="modulos/modulo-5-muhammad.html" style="text-decoration:none; display:block;">
         <h3>Historia y cultura</h3>
         <p>El profeta Muhammad ﷺ, el mundo islámico y su diversidad.</p>
-      </div>
-      <div class="persp-card">
+      </a>
+      <a class="persp-card" href="rutas/vida-cotidiana.html" style="text-decoration:none; display:block;">
         <h3>Psicología y vida humana</h3>
         <p>Intención, hábitos, emociones, identidad, comunidad y sentido de vida.</p>
-      </div>
+      </a>
       <div class="persp-card">
         <h3>Ciencia con responsabilidad</h3>
         <p>Qué puede respaldar la evidencia, qué sigue siendo preliminar y qué pertenece al ámbito de la fe.</p>
@@ -605,6 +607,7 @@
 
 <footer>
   Conociendo el Islam · Espiritualidad y vida cotidiana
+  <br><a href="https://link.mercadopago.com.mx/conocerelislam" target="_blank" rel="noopener" style="font-size:12px; color:var(--ink-soft); opacity:0.7;">Apoya este proyecto</a>
 </footer>
 
 </body>
