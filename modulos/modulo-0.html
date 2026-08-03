@@ -90,6 +90,22 @@
     width:100%; border-radius:14px; margin:18px 0; display:block;
   }
 
+  .gallery{
+    display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory;
+    padding-bottom:10px; margin:18px 0 6px 0;
+    -webkit-overflow-scrolling:touch;
+  }
+  .gallery::-webkit-scrollbar{ height:6px; }
+  .gallery::-webkit-scrollbar-thumb{ background:var(--line); border-radius:10px; }
+  .gallery img{
+    scroll-snap-align:start; flex:0 0 78%; max-width:320px;
+    border-radius:12px; height:260px; object-fit:cover;
+  }
+  @media(min-width:600px){ .gallery img{ flex:0 0 45%; } }
+  .gallery-hint{
+    font-size:11.5px; color:var(--ink-soft); text-align:center; opacity:0.7;
+  }
+
   .expand{
     border:1px solid var(--line); border-radius:12px; margin-top:18px;
     overflow:hidden;
@@ -353,7 +369,27 @@
     </div>
 
     <div class="protocol">
+      <h3>Áreas separadas para hombres y mujeres</h3>
+      <p>En la mayoría de las mezquitas, hombres y mujeres oran en espacios distintos — a veces salas separadas, a veces la misma sala dividida por una cortina o un pasillo, a veces un piso o balcón aparte. No es jerarquía; es una forma de que nadie tenga que preocuparse por cómo se ve durante los movimientos de la oración, y todos puedan concentrarse solo en orar.</p>
+      <p>La distribución exacta varía de una mezquita a otra. Si no es evidente al llegar, preguntar dónde ir es completamente normal — nadie lo va a tomar como una falta.</p>
+      <div class="lectura-grid">
+        <div class="lectura espiritual"><span class="l-tag">Espiritual</span><p>Modestia mutua que protege la concentración de todos, no jerarquía entre personas.</p></div>
+        <div class="lectura cuerpo"><span class="l-tag">Cuerpo</span><p>Libertad de moverse en las posturas sin autoconciencia frente al sexo opuesto.</p></div>
+        <div class="lectura mente"><span class="l-tag">Mente</span><p>Menos distracción social, más atención disponible para la propia oración.</p></div>
+      </div>
+    </div>
+
+    <div class="protocol">
+      <h3>El área de wudu</h3>
+      <img class="section-img" src="../assets/wudu-area.webp" alt="Área de lavado ritual (wudu) con asientos bajos junto a los grifos">
+      <p>Antes de entrar a la sala principal, vas a encontrar un área con grifos bajos y asientos — ahí se hace el wudu, la purificación con agua antes de la oración. Es normal ver a personas turnándose en silencio, sin prisa.</p>
+      <p>Los zapatos se dejan antes de esta zona o justo a la entrada de la sala de oración, según cómo esté distribuida cada mezquita — casi siempre hay un espacio o estante visible para dejarlos, y si no lo encuentras, preguntar es lo normal.</p>
+      <p style="font-size:13.5px; color:var(--ink-soft);">Sobre el significado espiritual del wudu, profundizamos en el <a href="modulo-3-oracion.html">Módulo 3</a>.</p>
+    </div>
+
+    <div class="protocol">
       <h3>Dónde sentarse</h3>
+      <img class="section-img" src="../assets/tapetes-mezquita.webp" alt="Tapetes de oración alineados en fila dentro de una mezquita">
       <p>Vas a notar que el espacio no es al azar. Hay tapetes alineados que marcan naturalmente el lugar de cada persona. No hay sillas — el suelo es el lugar donde se descansa, se observa y se ora.</p>
       <p>Es una forma sencilla de estar, sin elevarse por encima de otros. En ese gesto hay algo silencioso: todos ocupan el mismo nivel, sin distinciones visibles. Un recordatorio discreto de humildad y de igualdad ante Dios.</p>
       <p>También todo el espacio está orientado en una misma dirección. No necesitas entenderlo todavía; basta con seguir el flujo del lugar.</p>
@@ -406,6 +442,18 @@
     </div>
   </section>
 
+  <section class="beat">
+    <h2>Así se ve por dentro</h2>
+    <p>Un vistazo real al espacio antes de llegar.</p>
+    <div class="gallery">
+      <img src="../assets/salon-oracion-detalle.webp" alt="Sala de oración con alfombra azul, minbar y sillas">
+      <img src="../assets/pasillo-interior.webp" alt="Pasillo interior curvo con luz natural entrando por un tragaluz">
+      <img src="../assets/exterior-noche.webp" alt="Exterior de la mezquita iluminado de noche, con el minarete y un camino de piedra">
+      <img src="../assets/biblioteca-mezquita.webp" alt="Estantería de madera con libros dentro de la mezquita">
+    </div>
+    <p class="gallery-hint">Desliza para ver más →</p>
+  </section>
+
   <div class="checklist">
     <h2>Antes de salir, revisa</h2>
     <div class="check-grid">
@@ -420,7 +468,7 @@
   <div class="next">
     <h2>Siguiente paso</h2>
     <p>Cuando estés listo, el tercer módulo explora el ritmo del día: la oración, el sol y la luna.</p>
-    <a href="../modulos.html" class="btn">Ver todos los módulos →</a>
+    <a href="modulo-3-oracion.html" class="btn">Ir al Módulo 3 →</a>
   </div>
 </div>
 
