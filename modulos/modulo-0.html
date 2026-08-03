@@ -3,533 +3,274 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Módulo 0 — Antes de cruzar la puerta</title>
+<title>Tu primera visita a una mezquita | Conociendo el Islam</title>
+<meta name="description" content="Qué esperar antes de entrar a una mezquita por primera vez: vestimenta, protocolos de entrada y las palabras que vas a escuchar.">
+<meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1B2A4A;
-    --ink-soft:#2E3D5E;
-    --paper:#F7F3EC;
-    --paper-dim:#EFE9DD;
-    --sage:#4C7C74;
-    --sage-soft:#DCE7E4;
-    --sand:#C9A66B;
-    --charcoal:#2A2A28;
-    --line: rgba(27,42,74,0.14);
-    --max: 760px;
+    --paper:#F7F4EF; --paper-deep:#EFEAE0; --ink:#2C2B27; --ink-soft:#565349;
+    --sage:#7A9188; --sage-deep:#5C7268; --sage-pale:#E4EAE6;
+    --terracotta:#C08552; --terracotta-pale:#F0E1D0; --line: rgba(44,43,39,0.14);
+    --max: 680px;
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--charcoal);
-    font-family:'Montserrat',sans-serif;
-    font-weight:400;
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{
-    font-family:'Fraunces',serif;
-    color:var(--ink);
-    font-weight:500;
-    margin:0;
-  }
-  p{ margin:0 0 1em 0; text-align:justify; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Montserrat',sans-serif; line-height:1.75; }
+  h1,h2{ font-family:'Fraunces',serif; color:var(--ink); font-weight:500; margin:0; }
+  a{ color:var(--sage-deep); }
+  p{ margin:0 0 1em 0; }
   .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
 
-  /* ---------- HERO ---------- */
-  .hero{
+  nav{ padding:20px 0; border-bottom:1px solid var(--line); }
+  .nav-row{ display:flex; justify-content:space-between; align-items:center; max-width:900px; margin:0 auto; padding:0 28px; }
+  .brand{ font-family:'Fraunces',serif; font-size:18px; text-decoration:none; color:var(--ink); }
+  .brand em{ font-style:italic; color:var(--sage-deep); }
+  .nav-back{ font-size:13.5px; color:var(--ink-soft); text-decoration:none; }
+
+  header.top{ padding:56px 0 20px 0; }
+  .eyebrow{ font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:var(--terracotta); font-weight:700; margin-bottom:14px; display:block; }
+  header.top h1{ font-size:clamp(28px,4vw,38px); font-weight:400; line-height:1.2; margin-bottom:16px; }
+  header.top .lead{ font-size:16.5px; color:var(--ink-soft); }
+
+  /* Hero con foto de la mezquita */
+  .mosque-hero{
     position:relative;
-    background:var(--ink);
-    color:var(--paper);
-    padding:72px 0 0 0;
-    overflow:hidden;
-  }
-  .hero .wrap{ position:relative; z-index:2; text-align:center; padding-bottom:0; }
-  .eyebrow{
-    font-family:'Montserrat',sans-serif;
-    letter-spacing:0.22em;
-    text-transform:uppercase;
-    font-size:12px;
-    color:var(--sand);
-    margin-bottom:18px;
-    font-weight:600;
-  }
-  .hero h1{
-    font-size:clamp(34px,6vw,54px);
-    color:var(--paper);
-    line-height:1.15;
-    font-weight:400;
-    max-width:600px;
-    margin:0 auto 18px auto;
-  }
-  .hero h1 em{ font-style:italic; color:var(--sand); }
-  .hero-sub{
-    max-width:480px;
-    margin:0 auto 44px auto;
-    color:rgba(247,243,236,0.78);
-    font-size:15.5px;
-    text-align:center;
-  }
-  /* threshold arch */
-  .arch-frame{
-    position:relative;
-    width:min(560px,84vw);
-    margin:0 auto;
-    height:230px;
-  }
-  .arch-svg{ width:100%; height:100%; display:block; }
-  .arch-caption{
-    position:absolute;
-    left:0; right:0; bottom:20px;
-    text-align:center;
-    font-size:11.5px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:rgba(247,243,236,0.55);
-  }
-  .hero-meta{
+    min-height:56vh;
     display:flex;
-    justify-content:center;
-    gap:36px;
-    padding:22px 0 30px 0;
-    border-top:1px solid rgba(247,243,236,0.15);
-    margin-top:10px;
-    font-size:12.5px;
-    color:rgba(247,243,236,0.65);
-    flex-wrap:wrap;
+    align-items:flex-end;
+    background-image:
+      linear-gradient(180deg, rgba(24,33,58,0.25) 0%, rgba(24,33,58,0.55) 55%, rgba(24,33,58,0.88) 100%),
+      url('../assets/mezquita-ar-rahman.webp');
+    background-size:cover;
+    background-position:center;
   }
-  .hero-meta strong{ color:var(--sand); font-weight:600; }
-
-  /* ---------- INTRO NOTE ---------- */
-  .intro{
-    padding:56px 0 8px 0;
+  .mosque-hero-inner{
+    max-width:900px; margin:0 auto; padding:0 28px 32px 28px; width:100%;
   }
-  .intro p{ font-size:16.5px; color:var(--ink-soft); }
-  .intro p.lead{
-    font-family:'Fraunces',serif;
-    font-size:22px;
-    font-style:italic;
-    color:var(--ink);
-    text-align:left;
-    line-height:1.5;
+  .mosque-hero .eyebrow{ color:#D9B98C; }
+  .mosque-hero h1{
+    font-family:'Fraunces',serif; font-weight:400; color:#fff;
+    font-size:clamp(28px,4.5vw,42px); line-height:1.18; margin-bottom:10px;
+  }
+  .mosque-hero .lead{ color:rgba(255,255,255,0.82); font-size:15.5px; max-width:520px; margin-bottom:16px; }
+  .mosque-caption{
+    font-size:12px; letter-spacing:0.06em; color:rgba(255,255,255,0.65);
+    text-transform:uppercase; font-weight:600;
   }
 
-  /* ---------- SECTIONS ---------- */
-  section.beat{
-    padding:52px 0;
-    border-top:1px solid var(--line);
-  }
-  .beat-head{
-    display:flex;
-    align-items:baseline;
-    gap:18px;
-    margin-bottom:22px;
-  }
-  .beat-num{
-    font-family:'Fraunces',serif;
-    font-size:15px;
-    color:var(--sand);
-    font-style:italic;
-    white-space:nowrap;
-  }
-  .beat-time{
-    margin-left:auto;
-    font-size:11.5px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    opacity:0.55;
-    white-space:nowrap;
-  }
-  .beat h2{
-    font-size:26px;
-    font-weight:500;
-  }
-  .beat-body p{ font-size:15.5px; }
-  .facilitator{
-    background:var(--paper-dim);
-    border-left:3px solid var(--sand);
-    padding:16px 20px;
-    border-radius:2px;
-    margin:18px 0;
-    font-size:14.5px;
-  }
-  .facilitator .tag{
-    display:block;
-    font-family:'Montserrat',sans-serif;
-    font-weight:700;
-    font-size:10.5px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--sage);
-    margin-bottom:8px;
-  }
-  .facilitator p{ margin:0; text-align:left; }
+  section.beat{ padding:38px 0; border-top:1px solid var(--line); }
+  .beat h2{ font-size:21px; margin-bottom:14px; }
+  .beat p{ font-size:15.5px; color:var(--ink); }
 
-  /* glossary chips */
-  .glossary{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:10px;
-    margin-top:20px;
+  .word-box{
+    background:#fff; border:1px solid var(--line); border-radius:10px;
+    padding:16px 20px; margin:14px 0;
   }
-  .g-item{
-    display:grid;
-    grid-template-columns:180px 1fr;
-    gap:14px;
-    padding:12px 16px;
-    background:#fff;
-    border:1px solid var(--line);
-    border-radius:6px;
-    align-items:start;
-  }
-  .g-ar{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    color:var(--ink);
-    font-size:15.5px;
-  }
-  .g-mean{ font-size:13.5px; color:var(--charcoal); }
-  .g-mean b{ color:var(--sage); font-weight:600; }
+  .word-ar{ font-family:'Fraunces',serif; font-style:italic; font-size:16px; color:var(--ink); }
+  .word-mean{ font-size:14px; color:var(--ink-soft); margin-top:4px; }
+  .word-mean b{ color:var(--sage-deep); font-weight:600; }
 
-  /* triple lectura cards */
+  .glossary{ display:grid; grid-template-columns:1fr; gap:10px; margin-top:18px; }
+  @media(min-width:600px){ .glossary{ grid-template-columns:1fr 1fr; } }
+
+  /* Tarjetas de protocolo con triple lectura */
   .protocol{
-    border:1px solid var(--line);
-    border-radius:8px;
-    padding:22px 22px 18px 22px;
-    margin-bottom:18px;
-    background:#fff;
+    background:#fff; border:1px solid var(--line); border-radius:12px;
+    padding:20px 22px 18px 22px; margin:14px 0;
   }
-  .protocol h3{
-    font-size:18px;
-    margin-bottom:12px;
-  }
-  .lectura-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:12px;
-    margin-top:12px;
-  }
-  .lectura{
-    padding:12px 14px;
-    border-radius:6px;
-    font-size:13.8px;
-    background:var(--paper-dim);
-  }
+  .protocol h3{ font-family:'Fraunces',serif; font-size:17px; font-weight:500; margin-bottom:12px; }
+  .lectura-grid{ display:grid; grid-template-columns:1fr; gap:10px; margin-top:10px; }
+  @media(min-width:600px){ .lectura-grid{ grid-template-columns:1fr 1fr 1fr; } }
+  .lectura{ padding:11px 13px; border-radius:8px; font-size:13.2px; }
   .lectura .l-tag{
-    display:inline-block;
-    font-weight:700;
-    font-size:10px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    margin-bottom:6px;
-    padding:2px 8px;
-    border-radius:20px;
+    display:inline-block; font-weight:700; font-size:9.5px; letter-spacing:0.09em;
+    text-transform:uppercase; margin-bottom:6px; padding:2px 8px; border-radius:20px;
   }
-  .lectura.espiritual{ background:#EFE6D8; }
-  .lectura.espiritual .l-tag{ background:var(--sand); color:#fff; }
-  .lectura.neuro{ background:var(--sage-soft); }
-  .lectura.neuro .l-tag{ background:var(--sage); color:#fff; }
-  .lectura.psico{ background:#E7EAF2; }
-  .lectura.psico .l-tag{ background:var(--ink); color:#fff; }
-  .lectura p{ margin:0; text-align:left; }
+  .lectura.espiritual{ background:var(--terracotta-pale); }
+  .lectura.espiritual .l-tag{ background:var(--terracotta); color:#fff; }
+  .lectura.cuerpo{ background:var(--sage-pale); }
+  .lectura.cuerpo .l-tag{ background:var(--sage-deep); color:#fff; }
+  .lectura.mente{ background:#E7EAF2; }
+  .lectura.mente .l-tag{ background:#5C7A94; color:#fff; }
+  .lectura p{ margin:0; color:var(--ink); }
 
-  @media(min-width:640px){
-    .lectura-grid{ grid-template-columns:1fr 1fr 1fr; }
+  .experience{
+    background:var(--sage-pale); border-radius:12px; padding:24px 26px; margin-top:16px;
   }
+  .experience .tag{ font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--sage-deep); display:block; margin-bottom:8px; }
+  .experience p{ margin:0; color:var(--ink); }
 
-  /* breathing practice */
-  .breathe-wrap{
-    text-align:center;
-    padding:36px 0 12px 0;
-  }
+  .breathe-wrap{ text-align:center; padding:20px 0 6px 0; }
   .breathe-circle{
-    width:120px; height:120px;
-    margin:0 auto 22px auto;
-    border-radius:50%;
-    background:radial-gradient(circle at 35% 30%, var(--sage) 0%, var(--ink) 78%);
+    width:90px; height:90px; margin:0 auto 18px auto; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--sage) 0%, var(--sage-deep) 78%);
     animation:breathe 8s ease-in-out infinite;
-    box-shadow:0 0 0 1px rgba(27,42,74,0.08);
   }
   @keyframes breathe{
-    0%{ transform:scale(0.72); }
-    45%{ transform:scale(1); }
-    50%{ transform:scale(1); }
-    95%{ transform:scale(0.72); }
-    100%{ transform:scale(0.72); }
+    0%{ transform:scale(0.72); } 45%{ transform:scale(1); }
+    50%{ transform:scale(1); } 95%{ transform:scale(0.72); } 100%{ transform:scale(0.72); }
   }
-  .breathe-label{
-    font-size:12px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    opacity:0.7;
-  }
+  .breathe-label{ font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); }
   .niyyah-quote{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-size:19px;
-    color:var(--ink);
-    max-width:440px;
-    margin:26px auto 0 auto;
-    text-align:center;
-    line-height:1.6;
+    font-family:'Fraunces',serif; font-style:italic; font-size:17px; color:var(--ink);
+    max-width:420px; margin:20px auto 0 auto; text-align:center;
   }
 
-  /* checklist footer */
   .checklist{
-    background:var(--ink);
-    color:var(--paper);
-    padding:52px 0 60px 0;
+    background:var(--ink); color:var(--paper); border-radius:16px;
+    padding:34px 30px; margin:50px 0;
   }
-  .checklist h2{ color:var(--paper); font-size:24px; margin-bottom:22px; }
-  .check-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:10px;
-  }
-  @media(min-width:640px){ .check-grid{ grid-template-columns:1fr 1fr; } }
+  .checklist h2{ color:var(--paper); font-size:20px; margin-bottom:18px; }
+  .check-grid{ display:grid; grid-template-columns:1fr; gap:9px; }
+  @media(min-width:600px){ .check-grid{ grid-template-columns:1fr 1fr; } }
   .check-item{
-    display:flex;
-    gap:10px;
-    padding:12px 14px;
-    background:rgba(247,243,236,0.06);
-    border:1px solid rgba(247,243,236,0.14);
-    border-radius:6px;
-    font-size:13.5px;
-    align-items:flex-start;
+    display:flex; gap:9px; padding:10px 13px; background:rgba(247,244,239,0.07);
+    border:1px solid rgba(247,244,239,0.15); border-radius:6px; font-size:12.8px; align-items:flex-start;
   }
   .check-item::before{
-    content:"";
-    width:6px; height:6px;
-    border-radius:50%;
-    background:var(--sand);
-    margin-top:6px;
-    flex-shrink:0;
-  }
-  footer{
-    text-align:center;
-    padding:30px 0 40px 0;
-    font-size:11.5px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:rgba(247,243,236,0.4);
+    content:""; width:5px; height:5px; border-radius:50%; background:var(--terracotta);
+    margin-top:6px; flex-shrink:0;
   }
 
-  @media (prefers-reduced-motion: reduce){
-    .breathe-circle{ animation:none; }
-    html{ scroll-behavior:auto; }
+  .next{
+    background:var(--ink); color:var(--paper); border-radius:16px;
+    padding:40px 32px; margin:50px 0; text-align:center;
   }
+  .next h2{ color:var(--paper); font-size:22px; margin-bottom:12px; }
+  .next p{ color:rgba(247,244,239,0.75); font-size:14.5px; margin-bottom:22px; }
+  .btn{ display:inline-block; padding:13px 26px; border-radius:100px; background:var(--terracotta); color:#fff; text-decoration:none; font-weight:600; font-size:14px; }
+
+  footer{ text-align:center; padding:30px 0; font-size:12.5px; color:var(--ink-soft); border-top:1px solid var(--line); }
+
+  @media (prefers-reduced-motion: reduce){ .breathe-circle{ animation:none; } }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Islam como forma de vida · Módulo 0</div>
-    <h1>Antes de <em>cruzar</em><br>la puerta</h1>
-    <p class="hero-sub">Un encuentro breve para el grupo de RUH, antes de la primera visita a la mezquita.</p>
-    <div class="arch-frame">
-      <svg class="arch-svg" viewBox="0 0 400 230" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M40 230 V110 C40 45 100 10 200 10 C300 10 360 45 360 110 V230" stroke="#C9A66B" stroke-width="1.5"/>
-        <path d="M64 230 V112 C64 60 115 32 200 32 C285 32 336 60 336 112 V230" stroke="rgba(247,243,236,0.35)" stroke-width="1"/>
-        <circle cx="200" cy="118" r="2.5" fill="#C9A66B"/>
-      </svg>
-      <div class="arch-caption">30 minutos · antes de entrar</div>
-    </div>
-    <div class="hero-meta">
-      <div><strong>6</strong> momentos</div>
-      <div><strong>Cuerpo</strong> + palabra + sentido</div>
-      <div><strong>Grupo</strong> RUH</div>
-    </div>
+<nav>
+  <div class="nav-row">
+    <a href="../index.html" class="brand">Conociendo el <em>Islam</em></a>
+    <a href="../modulos.html" class="nav-back">← Todos los módulos</a>
   </div>
-</div>
+</nav>
 
-<div class="intro">
-  <div class="wrap">
-    <p class="lead">No van a presenciar algo ajeno. Van a experimentar, en carne propia, algo de lo que ya veníamos trabajando: respiración, cuerpo, presencia — ahora dentro de un espacio que tiene su propio lenguaje.</p>
-    <p>Este documento es tu guion de facilitación. Cada momento incluye lo que dices al grupo y, en el recuadro lateral, tus propias notas para sostener la sesión.</p>
+<header class="mosque-hero">
+  <div class="mosque-hero-inner">
+    <span class="eyebrow">Módulo 2 de 5</span>
+    <h1>Tu primera visita<br>a una mezquita</h1>
+    <p class="lead">¿Cómo entro respetuosamente a un espacio que todavía no conozco? Aquí tienes todo lo que necesitas antes de cruzar la puerta.</p>
+    <div class="mosque-caption">Mezquita Ar Rahman · Playa del Carmen, México</div>
   </div>
-</div>
+</header>
 
-<!-- 1 -->
-<section class="beat">
-  <div class="wrap">
-    <div class="beat-head">
-      <span class="beat-num">Uno</span>
-      <h2>Por qué vamos</h2>
-      <span class="beat-time">3 min</span>
-    </div>
-    <div class="beat-body">
-      <p>Lo que hoy vamos a hacer es una extensión natural de lo que ya practicamos juntos en RUH. Ahí trabajamos el cuerpo, la respiración, la presencia. Hoy llevamos esas mismas herramientas a un espacio distinto — no para cambiar de tema, sino para ver qué más pueden enseñarnos.</p>
-      <p>Nadie tiene que creer nada para estar aquí. Solo traer curiosidad y el cuerpo con el que ya han trabajado conmigo.</p>
-      <div class="facilitator">
-        <span class="tag">Nota para ti</span>
-        <p>Nombra explícitamente que esto no es "cambiar de programa": es RUH entrando a un espacio nuevo. Eso baja la guardia de quien tema una conversión encubierta.</p>
+<div class="wrap">
+
+  <section class="beat">
+    <h2>Antes de entrar</h2>
+    <p>No vas a presenciar algo ajeno. Vas a entrar a un espacio con su propio lenguaje, y este módulo es para que llegues sin sorpresas y con la mente disponible para estar presente, no ocupada en descifrar qué está pasando.</p>
+    <p>No hace falta creer nada para estar aquí — solo curiosidad y disposición a observar.</p>
+  </section>
+
+  <section class="beat">
+    <h2>Un solo Dios</h2>
+    <p>La idea que sostiene todo lo que vas a escuchar hoy es simple: un solo Dios, sin importar de dónde vengas o qué creas. No es una idea que pida dejar atrás lo propio — es un punto de partida compartido antes de cualquier diferencia. Por eso, al entrar, nadie te va a preguntar qué eres. Se recibe primero a la persona.</p>
+  </section>
+
+  <section class="beat">
+    <h2>La ropa que ancla</h2>
+    <p>Vas a ver a mujeres cubriendo su cabello con el hijab, y se pide a todos ropa holgada y modesta. Antes de pensar en cómo se siente en el cuerpo, vale entender qué es primero: un acto de orientación del ser hacia Dios, no un accesorio. Es identidad antes que herramienta.</p>
+    <p>Dicho esto, el cuerpo también lo nota: la ropa holgada y el cubrir la cabeza producen una señal de "otro modo" al sistema nervioso — parecido a cuando alguien se pone ropa deportiva para entrenar. El significado va primero; el efecto en el cuerpo es una capa adicional, no la explicación completa.</p>
+  </section>
+
+  <section class="beat">
+    <h2>Lo que vas a escuchar</h2>
+    <p>Vas a oír árabe y español mezclados, y no vas a entender todo — es normal. Estas son las palabras más probables:</p>
+    <div class="glossary">
+      <div class="word-box">
+        <div class="word-ar">As-salamu 'alaykum</div>
+        <div class="word-mean">Paz sobre ti — saludo al llegar</div>
+      </div>
+      <div class="word-box">
+        <div class="word-ar">Bismillah</div>
+        <div class="word-mean">En el nombre de Dios — al comenzar algo</div>
+      </div>
+      <div class="word-box">
+        <div class="word-ar">Alhamdulillah</div>
+        <div class="word-mean">Alabanza a Dios — al terminar, ante lo bueno</div>
+      </div>
+      <div class="word-box">
+        <div class="word-ar">Allahu akbar</div>
+        <div class="word-mean">Dios es más grande — marca el inicio de la oración</div>
+      </div>
+      <div class="word-box">
+        <div class="word-ar">Amin</div>
+        <div class="word-mean">Así sea — cierre de una súplica</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 2 -->
-<section class="beat">
-  <div class="wrap">
-    <div class="beat-head">
-      <span class="beat-num">Dos</span>
-      <h2>Un solo Dios</h2>
-      <span class="beat-time">5 min</span>
-    </div>
-    <div class="beat-body">
-      <p>La idea que sostiene todo lo que van a escuchar hoy es simple: un solo Dios, sin importar de dónde venga cada quien, qué crea o a qué se dedique. No es una idea que pide que dejen atrás lo suyo — es un punto de partida compartido antes de cualquier diferencia.</p>
-      <p>Esto es lo primero que van a notar al entrar: nadie les va a preguntar qué son. Se les recibe primero como personas.</p>
-      <div class="facilitator">
-        <span class="tag">Nota para ti</span>
-        <p>Confirma con el imam cómo prefiere que él mismo presente esta idea en su plática, para que tu introducción y la suya no suenen a dos versiones distintas frente al grupo.</p>
+  <section class="beat">
+    <h2>Protocolos de entrada</h2>
+    <p>Cada gesto tiene tres lecturas a la vez: por qué existe espiritualmente, qué le hace al cuerpo, qué le hace a la mente.</p>
+
+    <div class="protocol">
+      <h3>Descalzarse</h3>
+      <div class="lectura-grid">
+        <div class="lectura espiritual"><span class="l-tag">Espiritual</span><p>Dejar fuera lo mundano antes de un espacio de encuentro con Dios.</p></div>
+        <div class="lectura cuerpo"><span class="l-tag">Cuerpo</span><p>El contacto con el piso activa la propiocepción, señal de cambio de contexto.</p></div>
+        <div class="lectura mente"><span class="l-tag">Mente</span><p>Ritual de transición de rol, marca el paso a un momento distinto del día.</p></div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- 3 -->
-<section class="beat">
-  <div class="wrap">
-    <div class="beat-head">
-      <span class="beat-num">Tres</span>
-      <h2>La ropa que ancla</h2>
-      <span class="beat-time">5 min</span>
-    </div>
-    <div class="beat-body">
-      <p>Van a ver a mujeres cubriendo su cabello con el hijab, y a todos se les va a pedir ropa holgada y modesta. Antes de explicar cómo eso se siente en el cuerpo, vale entender qué es primero: un acto de orientación del ser hacia Dios, no un accesorio ni una técnica. Es identidad antes que herramienta.</p>
-      <p>Dicho eso, el cuerpo también lo nota: así como un turbante genera una sensación de contención en quien lo usa, la ropa holgada y el cubrir la cabeza producen una señal de "otro modo" al sistema nervioso — parecido a cuando se ponen ropa deportiva para entrenar. El significado viene primero; el efecto en el cuerpo es una capa más, no la explicación completa.</p>
-      <div class="facilitator">
-        <span class="tag">Nota para ti</span>
-        <p>Resiste la tentación de empezar por la neurociencia — empieza por el sentido. Si alguien pregunta directamente por la función reguladora, ahí es cuando la mencionas.</p>
+    <div class="protocol">
+      <h3>Dónde sentarse</h3>
+      <div class="lectura-grid">
+        <div class="lectura espiritual"><span class="l-tag">Espiritual</span><p>El orden del espacio refleja orden interno.</p></div>
+        <div class="lectura cuerpo"><span class="l-tag">Cuerpo</span><p>Un espacio predecible reduce la carga de vigilancia del sistema nervioso.</p></div>
+        <div class="lectura mente"><span class="l-tag">Mente</span><p>Menos decisiones al entrar, más atención disponible para estar presente.</p></div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- 4 -->
-<section class="beat">
-  <div class="wrap">
-    <div class="beat-head">
-      <span class="beat-num">Cuatro</span>
-      <h2>Lo que van a escuchar</h2>
-      <span class="beat-time">7 min</span>
-    </div>
-    <div class="beat-body">
-      <p>Van a oír árabe y español mezclados, y no van a entender todo — eso es normal, a mí también me costó al principio. Aquí van algunas palabras que probablemente escuchen hoy:</p>
-      <div class="glossary">
-        <div class="g-item">
-          <div class="g-ar">As-salamu 'alaykum</div>
-          <div class="g-mean">Saludo al llegar — <b>"paz sobre ti"</b>. Se responde <em>Wa 'alaykum as-salam</em>.</div>
-        </div>
-        <div class="g-item">
-          <div class="g-ar">Bismillah</div>
-          <div class="g-mean"><b>"En el nombre de Dios"</b> — se dice al comenzar cualquier cosa.</div>
-        </div>
-        <div class="g-item">
-          <div class="g-ar">Alhamdulillah</div>
-          <div class="g-mean"><b>"Alabanza a Dios"</b> — al terminar algo o recibir algo bueno.</div>
-        </div>
-        <div class="g-item">
-          <div class="g-ar">Allahu akbar</div>
-          <div class="g-mean"><b>"Dios es más grande"</b> — marca el inicio de la oración.</div>
-        </div>
-        <div class="g-item">
-          <div class="g-ar">Amin</div>
-          <div class="g-mean"><b>"Así sea"</b> — cierre de una súplica, como en otras tradiciones.</div>
-        </div>
-      </div>
-      <div class="facilitator">
-        <span class="tag">Nota para ti</span>
-        <p>No es necesario memorizar más de esto para hoy. La meta es que ninguna palabra los tome por sorpresa, no que salgan hablando árabe.</p>
+    <div class="protocol">
+      <h3>Silencio durante la oración</h3>
+      <div class="lectura-grid">
+        <div class="lectura espiritual"><span class="l-tag">Espiritual</span><p>Un momento que no se comparte con nada más.</p></div>
+        <div class="lectura cuerpo"><span class="l-tag">Cuerpo</span><p>El silencio compartido baja el ritmo respiratorio de quien observa.</p></div>
+        <div class="lectura mente"><span class="l-tag">Mente</span><p>Observar sin intervenir es, en sí, una forma de calma.</p></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 5 -->
-<section class="beat">
-  <div class="wrap">
-    <div class="beat-head">
-      <span class="beat-num">Cinco</span>
-      <h2>Protocolos de entrada</h2>
-      <span class="beat-time">7 min</span>
+  <section class="beat">
+    <h2>Intención antes de entrar</h2>
+    <p>Cierra con una respiración breve — la misma herramienta que puede usar cualquier persona antes de entrar a un espacio nuevo, con más presencia y menos ruido mental.</p>
+    <div class="breathe-wrap">
+      <div class="breathe-circle" aria-hidden="true"></div>
+      <div class="breathe-label">Inhala 4 · sostén 2 · exhala 6</div>
+      <p class="niyyah-quote">"Antes de cruzar, pongo mi intención: vengo a escuchar, no a decidir todavía."</p>
     </div>
-    <div class="beat-body">
-      <p>Cada gesto que van a ver tiene tres lecturas a la vez: por qué existe espiritualmente, qué le hace al cuerpo, y qué le hace a la mente. Ninguna anula a la otra.</p>
+  </section>
 
-      <div class="protocol">
-        <h3>Descalzarse</h3>
-        <div class="lectura-grid">
-          <div class="lectura espiritual"><span class="l-tag">Espiritual</span><p>Dejar fuera lo mundano antes de entrar a un espacio de encuentro con Dios.</p></div>
-          <div class="lectura neuro"><span class="l-tag">Cuerpo</span><p>El contacto directo con el piso activa la propiocepción — señal clara de cambio de contexto.</p></div>
-          <div class="lectura psico"><span class="l-tag">Mente</span><p>Ritual de transición de rol, como el que usamos en RUH antes de una práctica.</p></div>
-        </div>
-      </div>
-
-      <div class="protocol">
-        <h3>Dónde sentarse</h3>
-        <div class="lectura-grid">
-          <div class="lectura espiritual"><span class="l-tag">Espiritual</span><p>El orden del espacio refleja orden interno; nadie improvisa su lugar.</p></div>
-          <div class="lectura neuro"><span class="l-tag">Cuerpo</span><p>Un espacio predecible reduce la carga de vigilancia del sistema nervioso.</p></div>
-          <div class="lectura psico"><span class="l-tag">Mente</span><p>Menos decisiones que tomar al entrar, más atención disponible para estar presentes.</p></div>
-        </div>
-      </div>
-
-      <div class="protocol">
-        <h3>Silencio durante la oración</h3>
-        <div class="lectura-grid">
-          <div class="lectura espiritual"><span class="l-tag">Espiritual</span><p>Un momento que no se comparte con nada más — se guarda entero.</p></div>
-          <div class="lectura neuro"><span class="l-tag">Cuerpo</span><p>El silencio compartido baja el ritmo respiratorio de quien lo observa, no solo de quien reza.</p></div>
-          <div class="lectura psico"><span class="l-tag">Mente</span><p>Observar sin intervenir es en sí una práctica de regulación — la misma que trabajamos en RUH.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 6 -->
-<section class="beat">
-  <div class="wrap">
-    <div class="beat-head">
-      <span class="beat-num">Seis</span>
-      <h2>Intención antes de entrar</h2>
-      <span class="beat-time">3 min</span>
-    </div>
-    <div class="beat-body">
-      <p>Cerramos como abrimos siempre: con la respiración. La única diferencia es hacia dónde la dirigimos hoy.</p>
-      <div class="breathe-wrap">
-        <div class="breathe-circle" aria-hidden="true"></div>
-        <div class="breathe-label">Inhala 4 · sostén 2 · exhala 6</div>
-        <p class="niyyah-quote">"Antes de cruzar, pongo mi intención: vengo a escuchar, no a decidir todavía."</p>
-      </div>
-      <div class="facilitator">
-        <span class="tag">Nota para ti</span>
-        <p>Guía tres ciclos de respiración con el grupo antes de caminar hacia la entrada. Es el mismo puente que usan en RUH: el cuerpo entra primero, la mente lo sigue.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="checklist">
-  <div class="wrap">
+  <div class="checklist">
     <h2>Antes de salir, revisa</h2>
     <div class="check-grid">
-      <div class="check-item">Ropa holgada confirmada con cada participante</div>
-      <div class="check-item">Pañuelos o velos disponibles para quien no traiga uno</div>
-      <div class="check-item">Encuadre de "un solo Dios" acordado con el imam</div>
-      <div class="check-item">Horario de la plática confirmado, sin cruce con la oración</div>
-      <div class="check-item">Grupo avisado: se podrá escuchar árabe sin traducción inmediata</div>
-      <div class="check-item">Tres respiraciones guiadas antes de cruzar la puerta</div>
+      <div class="check-item">Ropa holgada lista</div>
+      <div class="check-item">Un velo a la mano, por si hace falta</div>
+      <div class="check-item">Horario confirmado, sin cruce con la oración</div>
+      <div class="check-item">Mente abierta a escuchar árabe sin traducción inmediata</div>
+      <div class="check-item">Tres respiraciones antes de cruzar la puerta</div>
     </div>
   </div>
-  <footer>Islam como forma de vida · Módulo 0 · Encuentro previo a la mezquita</footer>
+
+  <div class="next">
+    <h2>Siguiente paso</h2>
+    <p>Cuando estés listo, el tercer módulo explora el ritmo del día: la oración, el sol y la luna.</p>
+    <a href="../modulos.html" class="btn">Ver todos los módulos →</a>
+  </div>
 </div>
+
+<footer>Conociendo el Islam · Módulo 2 · Tu primera visita a una mezquita</footer>
 
 </body>
 </html>
