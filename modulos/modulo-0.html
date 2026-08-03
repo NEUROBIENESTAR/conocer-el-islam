@@ -73,6 +73,52 @@
   .beat h2{ font-size:21px; margin-bottom:14px; }
   .beat p{ font-size:15.5px; color:var(--ink); }
 
+  .icon-heading{ display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+  .icon-heading h2{ margin-bottom:0; }
+  .icon-heading svg{ flex-shrink:0; }
+
+  .pull-quote{
+    background:var(--terracotta-pale); border-radius:12px;
+    padding:22px 26px; margin:18px 0;
+  }
+  .pull-quote p{
+    font-family:'Fraunces',serif; font-style:italic; font-size:17px;
+    color:var(--ink); margin:0; line-height:1.55;
+  }
+
+  .section-img{
+    width:100%; border-radius:14px; margin:18px 0; display:block;
+  }
+
+  .expand{
+    border:1px solid var(--line); border-radius:12px; margin-top:18px;
+    overflow:hidden;
+  }
+  .expand summary{
+    padding:15px 20px; cursor:pointer; list-style:none;
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:'Fraunces',serif; font-size:16px; color:var(--ink);
+    background:#fff;
+  }
+  .expand summary::-webkit-details-marker{ display:none; }
+  .expand summary::after{ content:"+"; font-size:20px; color:var(--sage-deep); font-weight:300; }
+  .expand[open] summary::after{ content:"–"; }
+  .expand-body{ padding:6px 20px 22px 20px; background:#fff; }
+  .expand-body p{ font-size:14.5px; color:var(--ink-soft); }
+  .spellings{
+    display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 18px 0;
+  }
+  .spelling-chip{
+    font-family:'Fraunces',serif; font-style:italic; font-size:13px;
+    background:var(--paper-deep); color:var(--ink); padding:6px 14px; border-radius:100px;
+  }
+  .expand-item{ margin-bottom:16px; }
+  .expand-item h4{
+    font-family:'Fraunces',serif; font-size:14.5px; font-weight:600;
+    color:var(--sage-deep); margin:0 0 4px 0;
+  }
+  .expand-item p{ margin:0; }
+
   .word-box{
     background:#fff; border:1px solid var(--line); border-radius:10px;
     padding:16px 20px; margin:14px 0;
@@ -203,9 +249,21 @@
 <div class="wrap">
 
   <section class="beat">
-    <h2>Antes de entrar</h2>
-    <p>No vas a presenciar algo ajeno. Vas a entrar a un espacio con su propio lenguaje, y este módulo es para que llegues sin sorpresas y con la mente disponible para estar presente, no ocupada en descifrar qué está pasando.</p>
-    <p>No hace falta creer nada para estar aquí — solo curiosidad y disposición a observar.</p>
+    <div class="icon-heading">
+      <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 20 A30 30 0 1 0 60 80 A22 30 0 1 1 60 20Z" fill="#c8a96a" opacity="0" transform="translate(0,10)">
+          <animate attributeName="opacity" from="0" to="0.9" dur="1.8s" fill="freeze" />
+          <animateTransform attributeName="transform" type="translate" from="0,10" to="0,0" dur="1.8s" fill="freeze" />
+        </path>
+      </svg>
+      <h2>Antes de cruzar la puerta</h2>
+    </div>
+    <p>Una mezquita no es solo un lugar físico. Es un espacio donde el ruido baja, el tiempo cambia de ritmo y la atención vuelve hacia dentro.</p>
+    <p>Aquí no se viene a hacer algo complicado, ni a entenderlo todo. Se viene a estar. A observar sin prisa. A escuchar sin tener que responder. A permitir que el corazón, poco a poco, se aquiete.</p>
+    <p>No necesitas saber exactamente qué hacer. Solo entrar con respeto… y con una intención sencilla: estar presente.</p>
+    <div class="pull-quote">
+      <p>"Todo lo que vas a hacer aquí no es solo forma — es una forma de entrar con el corazón."</p>
+    </div>
   </section>
 
   <section class="beat">
@@ -215,8 +273,43 @@
 
   <section class="beat">
     <h2>La ropa que ancla</h2>
-    <p>Vas a ver a mujeres cubriendo su cabello con el hijab, y se pide a todos ropa holgada y modesta. Antes de pensar en cómo se siente en el cuerpo, vale entender qué es primero: un acto de orientación del ser hacia Dios, no un accesorio. Es identidad antes que herramienta.</p>
-    <p>Dicho esto, el cuerpo también lo nota: la ropa holgada y el cubrir la cabeza producen una señal de "otro modo" al sistema nervioso — parecido a cuando alguien se pone ropa deportiva para entrenar. El significado va primero; el efecto en el cuerpo es una capa adicional, no la explicación completa.</p>
+    <img class="section-img" src="../assets/hijab-quietud.webp" alt="Mujer con hijab y abaya en tonos claros, apoyada en un arco iluminado">
+    <p>Vas a ver a hombres y mujeres vistiendo de forma holgada y sencilla. No es una cuestión estética, sino una forma de entrar en otro estado: menos hacia fuera, más hacia dentro.</p>
+    <p>Las mujeres cubren su cabello con el hijab — un velo que no busca ocultar, sino proteger la intimidad y dirigir la atención hacia lo esencial. Hay en él una forma de calma: menos exposición, menos distracción, más presencia.</p>
+    <p>La ropa amplia acompaña ese mismo sentido: permite al cuerpo estar cómodo, sin tensión ni necesidad de mostrarse. Todo en el entorno apunta a lo mismo — reducir lo externo para facilitar lo interno.</p>
+    <p>Antes que una norma, es una orientación: un gesto silencioso de humildad, recogimiento y conexión con Dios.</p>
+    <p>Dicho esto, el cuerpo también lo percibe. La ropa holgada y el cubrir la cabeza marcan una transición — como si el sistema entendiera que este es un espacio distinto, donde se baja el ritmo y se afina la atención. El significado va primero; el efecto en el cuerpo es una capa adicional.</p>
+
+    <details class="expand">
+      <summary>El hijab — quietud y orientación</summary>
+      <div class="expand-body">
+        <p>También vas a encontrarlo escrito de estas formas, según la región o la transliteración:</p>
+        <div class="spellings">
+          <span class="spelling-chip">حجاب</span>
+          <span class="spelling-chip">hijab</span>
+          <span class="spelling-chip">hiyab</span>
+          <span class="spelling-chip">jiyab</span>
+        </div>
+        <p>No es adorno. Es dirección. Una forma visible de volver la intención hacia Dios, antes que hacia la mirada externa.</p>
+
+        <div class="expand-item">
+          <h4>Modestia que libera</h4>
+          <p>Al cubrir, reduce la presión de exhibirse. Menos distracción, más presencia interior.</p>
+        </div>
+        <div class="expand-item">
+          <h4>Comodidad profunda</h4>
+          <p>La tela holgada y el velo crean un "modo" distinto: el cuerpo baja el ritmo, la atención se recoge.</p>
+        </div>
+        <div class="expand-item">
+          <h4>Belleza silenciosa</h4>
+          <p>No busca destacar, sino armonizar. Su estética está en la sencillez y la coherencia.</p>
+        </div>
+        <div class="expand-item">
+          <h4>Identidad consciente</h4>
+          <p>No es accesorio cultural únicamente; es práctica espiritual encarnada en lo cotidiano.</p>
+        </div>
+      </div>
+    </details>
   </section>
 
   <section class="beat">
@@ -261,13 +354,38 @@
 
     <div class="protocol">
       <h3>Dónde sentarse</h3>
+      <p>Vas a notar que el espacio no es al azar. Hay tapetes alineados que marcan naturalmente el lugar de cada persona. No hay sillas — el suelo es el lugar donde se descansa, se observa y se ora.</p>
+      <p>Es una forma sencilla de estar, sin elevarse por encima de otros. En ese gesto hay algo silencioso: todos ocupan el mismo nivel, sin distinciones visibles. Un recordatorio discreto de humildad y de igualdad ante Dios.</p>
+      <p>También todo el espacio está orientado en una misma dirección. No necesitas entenderlo todavía; basta con seguir el flujo del lugar.</p>
       <div class="lectura-grid">
-        <div class="lectura espiritual"><span class="l-tag">Espiritual</span><p>El orden del espacio refleja orden interno.</p></div>
-        <div class="lectura cuerpo"><span class="l-tag">Cuerpo</span><p>Un espacio predecible reduce la carga de vigilancia del sistema nervioso.</p></div>
-        <div class="lectura mente"><span class="l-tag">Mente</span><p>Menos decisiones al entrar, más atención disponible para estar presente.</p></div>
+        <div class="lectura espiritual"><span class="l-tag">Espiritual</span><p>El orden externo y la sencillez del espacio invitan a la humildad y al recogimiento.</p></div>
+        <div class="lectura cuerpo"><span class="l-tag">Cuerpo</span><p>El contacto con el suelo genera estabilidad y una sensación más directa de presencia.</p></div>
+        <div class="lectura mente"><span class="l-tag">Mente</span><p>Menos estructura externa compleja, menos distracción — más facilidad para estar.</p></div>
+      </div>
+      <div class="pull-quote">
+        <p>"Esa dirección compartida tiene un significado profundo que exploraremos más adelante."</p>
       </div>
     </div>
 
+  </section>
+
+  <section class="beat">
+    <div class="icon-heading">
+      <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 20 A30 30 0 1 0 60 80 A22 30 0 1 1 60 20Z" fill="#c8a96a" opacity="0" transform="translate(0,10)">
+          <animate attributeName="opacity" from="0" to="0.9" dur="1.8s" fill="freeze" />
+          <animateTransform attributeName="transform" type="translate" from="0,10" to="0,0" dur="1.8s" fill="freeze" />
+        </path>
+      </svg>
+      <h2>Momento de pausa</h2>
+    </div>
+    <p>Antes de seguir, detente un instante. Respira. Observa el espacio… y nota cómo todo te invita a soltar prisa, comparación y control.</p>
+    <p>Aquí, nadie está por encima de otro. Solo personas, compartiendo un mismo lugar.</p>
+    <p>Sin hacer nada más, permite que el cuerpo se asiente y que la mente deje de adelantarse.</p>
+  </section>
+
+  <section class="beat">
+    <h2>Durante la oración</h2>
     <div class="protocol">
       <h3>Silencio durante la oración</h3>
       <div class="lectura-grid">
