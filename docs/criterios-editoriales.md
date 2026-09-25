@@ -44,3 +44,11 @@ Pasaron: sintaxis JavaScript; estructura HTML; IDs únicos; existencia de todos 
 Prueba DOM con jsdom: filtros y estados aria-pressed; 200 selecciones con cobertura de los 20 hábitos y sin repetición consecutiva; enlace al hábito seleccionado; apertura de detalle mediante fragmento y gestión del foco.
 
 Pendiente: inspección visual y navegación real en navegador a 390 y 1440 px. Playwright está disponible como biblioteca, pero el ejecutable del navegador no está instalado y las descargas devolvieron archivos inválidos. La comprobación DOM no sustituye esta revisión. El contenido y los desplegables usan HTML nativo; filtros y sorteo se muestran al inicializar JavaScript.
+
+## Ajuste visual y editorial solicitado
+
+El cierre se resume en «Sobre estas prácticas», con tres párrafos breves. Se conserva la atribución de fuentes junto a cada hábito.
+
+Nueva fotografía generada: `assets/habitos-intencion-hero.jpg`. Miniatura social: `assets/habitos-intencion-compartir.jpg`. Ambas creadas con generación integrada de imágenes, estilo editorial boho Tulum chic islámico: arcos, tonos arena y salvia, lino, palmas y objetos de contemplación; la miniatura incorpora la pregunta «¿Qué hábito puede darle más intención a tu día?». Las versiones JPEG mantienen las dimensiones originales.
+
+La página incluye Open Graph y Twitter Card con título, descripción, imagen y texto alternativo. Durante la revisión, las URL absolutas de imagen apuntan al dominio de la rama de vista previa, para que la miniatura esté accesible antes de publicar en producción. Al integrar en main, actualizar ambas URL al dominio de producción. La presentación final de la tarjeta depende de cada aplicación y su caché.

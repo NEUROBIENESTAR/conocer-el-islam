@@ -81,3 +81,8 @@ details::details-content{display:block!important}
 body{background:white}
 }
 
+
+/* Fotografía horizontal: conservar la escena completa en ambos tamaños. */
+.hero{grid-template-columns:1.15fr 1fr;gap:40px}
+.hero img{height:auto;aspect-ratio:1672/941;border-radius:140px 140px 16px 16px;object-fit:cover}
+@media(max-width:760px){.hero{grid-template-columns:1fr;gap:28px}.hero img{height:auto;max-width:100%;border-radius:80px 80px 12px 12px}}
