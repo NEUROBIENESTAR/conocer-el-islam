@@ -7,18 +7,22 @@ Sitio educativo que presenta el islam desde una mirada integral: espiritualidad,
 ## Estructura del sitio
 
 ```
-/index.html          → página principal
-/registro.html        → alta de nuevos usuarios (conectado a Google Apps Script)
-/programa.html         → contenido completo del programa (pendiente)
-/login.html            → acceso de usuarios existentes (pendiente)
-/modulos/               → módulos del curso
-/rutas/                 → páginas de cada ruta de aprendizaje
-/assets/                → imágenes, íconos y recursos
+/index.html               → página principal
+/modulos.html             → índice de módulos
+/programa.html            → programa completo (destino tras ingresar con código)
+/registro.html            → alta de avisos (conectado a Google Apps Script)
+/acceso.html              → ingreso con código de cortesía
+/aviso-privacidad.html    → aviso de privacidad
+/modulos/                 → módulos del curso
+    /profundiza/          → contenidos para profundizar (Muhammad ﷺ, Khadija, liderazgo)
+/rutas/                   → páginas de cada ruta de aprendizaje
+/assets/                  → imágenes (.webp) usadas por el sitio
+/_archivo/                → originales pesados, versiones antiguas y zips (no se publica)
 ```
 
 ## Estado del proyecto
 
-En construcción. El `index.html` y `registro.html` ya están listos; el resto del contenido se agrega módulo por módulo.
+En construcción. Están listos: portada, registro, acceso, programa, 5 módulos + cierre, 5 episodios/especiales de profundización y las 5 rutas de aprendizaje. Las rutas de orientación espiritual, nuevo musulmán y vida cotidiana tienen temas marcados como "Próximamente".
 
 ## Tecnología
 
